@@ -1,0 +1,28 @@
+@keyframes menu {
+    from {
+        left: 100vw;
+    }
+    to {
+        left: 0;
+    }
+}
+@keyframes swing {
+    15% {
+        transform: translateX(12px);
+    }
+    30% {
+        transform: translateX(-12px);
+    }
+    40% {
+        transform: translateX(6px);
+    }
+    50% {
+        transform: translateX(-6px);
+    }
+    65% {
+        transform: translateX(2px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

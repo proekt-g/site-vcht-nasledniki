@@ -1,0 +1,15 @@
+$default-font: "Graphik LCG";
+$content-width: 1280px;
+$heightHeader: 100px;
+$heightFooter: 140px;
+$minHeightMain: calc(100vh - (#{$heightHeader} + #{$heightFooter}));
+$mainColor: #ffffff;
+$mainWeight: 400;
+$mainSize: 14px;
+:root {
+    --site-color: #0c0c0d;
+    --ui-color-violet: #a200ff;
+    --ui-color-ping: #f230b2;
+    --ui-color-blue: #3d6af2;
+    --ui-color-yellow: #ffd580;
+}
