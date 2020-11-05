@@ -1,18 +1,37 @@
 .poster {
-    overflow: hidden;
+    // overflow: hidden;
     .filter {
         margin-top: 60px;
+        @media (max-width: 900px) {
+            margin-top: 30px;
+        }
+        @media (max-width: 500px) {
+            margin-top: 40px;
+        }
         &__container {
-            margin: 0 0 0 calc(100vw - 1400px - (100vw - 1400px) / 2);
-            max-width: 100%;
-            width: auto;
+            // margin: 0 0 0 calc(100vw - 1400px - (100vw - 1400px) / 2);
+            // max-width: 100%;
+            // overflow: hidden;
+            // width: auto;
+            @media (max-width: 1279px) {
+                padding-right: 0;
+            }
         }
         &__date {
             display: flex;
             margin-bottom: 50px;
             overflow: auto;
-            width: calc(1400px + ((100vw - 1400px) / 2) - 60px);
-            margin-right: 60px;
+            // max-width: 100px;
+            flex-wrap: wrap;
+            // overflow: auto;
+            // width: calc(1400px + ((100vw - 1400px) / 2) - 60px);
+            // margin-right: 60px;
+            @media (max-width: 1279px) {
+                flex-wrap: nowrap;
+            }
+            @media (max-width: 900px) {
+                margin-bottom: 20px;
+            }
             &-element {
                 margin-right: 30px;
                 opacity: 0.5;
@@ -21,6 +40,14 @@
                 white-space: nowrap;
                 transition: 0.3s;
                 cursor: pointer;
+                display: block;
+                @media (max-width: 900px) {
+                    font-size: 28px;
+                }
+                @media (max-width: 500px) {
+                    font-size: 25px;
+                    margin-right: 20px;
+                }
                 &--active {
                     opacity: 1;
                     &:hover {
@@ -35,33 +62,70 @@
     }
     .baner {
         margin-top: 50px;
+        @media (max-width: 900px) {
+            margin-top: 30px;
+        }
         &__img {
             border-radius: 10px;
-            height: 340px;
+            height: auto;
         }
     }
     .poster-slider {
         margin-top: 80px;
         position: relative;
-        &__slider {
+        @media (max-width: 900px) {
+            margin-top: 40px;
+        }
+        &__slider,
+        &__stories {
             padding-top: 40px;
             padding-right: 60px;
-            // margin-right: ;
+            margin-right: calc(100vw - 1400px - (100vw - 1400px) / 2 + 60px);
+            padding-left: calc(100vw - 1400px - (100vw - 1400px) / 2 + 60px);
+            @media (max-width: 1400px) {
+                padding-left: 60px;
+                margin-right: 60px;
+                padding-right: 20px;
+            }
+            @media (max-width: 1279px) {
+                padding-left: 40px;
+                margin-right: 40px;
+            }
+            @media (max-width: 900px) {
+                margin-right: 0;
+            }
+            @media (max-width: 500px) {
+                padding-left: 20px;
+            }
         }
         &__shadow,
         &__dark {
             position: absolute;
-
+            pointer-events: none;
             bottom: 0;
             z-index: 2;
             height: 100%;
             width: auto;
+            // transition: 0.3s;
+            @media (max-width: 900px) {
+                display: none;
+            }
         }
         &__shadow {
             right: 60px;
+            &--hidden {
+                opacity: 0;
+            }
+            &--right {
+                right: 51px;
+            }
         }
         &__dark {
-            right: -100px;
+            right: -99px;
+            transition: 0s;
+            &--hidden {
+                opacity: 0;
+            }
         }
         &__arrow {
             top: 100px;
@@ -72,6 +136,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: 0.3s;
+            @media (max-width: 900px) {
+                display: none;
+            }
             &-right {
                 right: 0;
                 border: 1px solid #555556;
@@ -79,6 +147,31 @@
                 &:hover {
                     border: 1px solid #fff;
                 }
+            }
+            &-left {
+                left: calc(100vw - 1400px - (100vw - 1400px) / 2 - 40px);
+                @media (max-width: 1400px) {
+                    left: 0;
+                }
+            }
+        }
+        .swiper-slide {
+            transition: 0.3s;
+        }
+        .swiper-slide-prev-prev,
+        .swiper-slide-prev {
+            opacity: 0.3;
+        }
+        .swiper-button-disabled {
+            opacity: 0;
+            pointer-events: none;
+        }
+        &__stories {
+            .poster-slider__arrow {
+                top: 65px;
+            }
+            .poster-slider__dark {
+                right: -28px;
             }
         }
     }

@@ -1,0 +1,91 @@
+.footer {
+    margin-top: 120px;
+    @media (max-width: 900px) {
+        margin-top: 80px;
+    }
+    @media (max-width: 500px) {
+        margin-top: 50px;
+    }
+    &__top {
+        display: flex;
+        align-items: center;
+        padding-bottom: 29px;
+        border-bottom: 1px solid #303131;
+        @media (max-width: 900px) {
+            flex-wrap: wrap;
+        }
+    }
+    &__social {
+        margin-right: 25px;
+        display: block;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    &__mail {
+        font-size: 16px;
+        font-weight: 500;
+        margin-left: 5px;
+        @media (max-width: 500px) {
+            flex: 0 1 100%;
+            margin-left: 0;
+            margin-top: 25px;
+        }
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    &__links {
+        flex-grow: 1;
+        text-align: right;
+        @media (max-width: 900px) {
+            flex: 0 1 100%;
+            text-align: left;
+            margin-top: 35px;
+        }
+        @media (max-width: 500px) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    &__agreements {
+        font-size: 15px;
+        margin-left: 30px;
+        @media (max-width: 500px) {
+            flex: 0 1 100%;
+            margin-left: 0;
+        }
+        &:first-child {
+            @media (max-width: 900px) {
+                margin-left: 0;
+            }
+            @media (max-width: 500px) {
+                margin-bottom: 25px;
+            }
+        }
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    &__info {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 30px;
+        @media (max-width: 900px) {
+            flex-wrap: wrap;
+            margin-top: 0;
+        }
+    }
+    &__cop {
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 15px;
+        line-height: 20px;
+        @media (max-width: 1279px) {
+            max-width: 613px;
+        }
+        @media (max-width: 900px) {
+            margin-top: 30px;
+        }
+    }
+}
