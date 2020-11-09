@@ -23,6 +23,8 @@
     &__logo {
         @media (max-width: 900px) {
             height: 48px;
+            display: flex;
+            align-items: center;
         }
         @media (max-width: 500px) {
             height: 34px;

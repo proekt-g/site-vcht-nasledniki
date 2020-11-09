@@ -31,11 +31,24 @@ $(window).on("load", () => {
             },
         })
     }
+    function scrollEmulation() {
+        let documentWidth = parseInt(document.documentElement.clientWidth)
+        let windowsWidth = parseInt(window.innerWidth)
+        let scrollbarWidth = windowsWidth - documentWidth
+        $("body").css({ "padding-right": `${scrollbarWidth}px` })
+        $("body").toggleClass("block")
+    }
     //  /universal function
     // ----------------------------------------------
     // event
+    // Фильтр на странице participants.html
+    $("#participants-filter").on("input submit", (e) => {
+        e.preventDefault()
+        ajaxRequest("filter__container", "test.php")
+    })
+    // /Фильтр на странице participants.html
     // Даты на странице poster.html
-    $(".filter__container").on("input submit", (e) => {
+    $("#poster-filter").on("input submit", (e) => {
         e.preventDefault()
         ajaxRequest("filter__container", "test.php")
     })
@@ -77,13 +90,13 @@ $(window).on("load", () => {
         $(e.target).parents(".crumbs").children(".crumbs__crumb--active")
             .length === 0
             ? $(e.target)
-                  .parents(".crumbs")
-                  .children(".crumbs__clear")
-                  .removeClass("crumbs__clear--active")
+                .parents(".crumbs")
+                .children(".crumbs__clear")
+                .removeClass("crumbs__clear--active")
             : $(e.target)
-                  .parents(".crumbs")
-                  .children(".crumbs__clear")
-                  .addClass("crumbs__clear--active")
+                .parents(".crumbs")
+                .children(".crumbs__clear")
+                .addClass("crumbs__clear--active")
     })
     $(".crumbs__clear").on("click", function () {
         $(this)
@@ -96,17 +109,20 @@ $(window).on("load", () => {
         $(".menu__desktop-more-list").slideToggle(400)
         $("#menu-element-more").toggleClass("menu__desktop-element--open")
     })
-    $(".filters__switch-text").on("click", () => {
-        $(".filters__switch-text")
-            .parent()
-            .toggleClass("filters__switch--active")
-        $(".filters__switch-modal").slideToggle(400)
+    $(".filters__switch-text").on("click", function () {
+        $(this).parent().toggleClass("filters__switch--active")
+        $(this).next().slideToggle(400)
     })
-    $(".filters__switch-modal-label").on("click", (e) => {
+    $(".filters__switch-modal-label").on("click", function (e) {
         if (!$(e.target).hasClass("filters__switch-modal-label--custom")) {
-            $(".filters__switch-text").text($(e.target).text())
-            $(".filters__switch-modal").toggle(0)
-            $(".filters__switch").toggleClass("filter-switch--active")
+            $(this)
+                .parents(".filters__switch")
+                .children(".filters__switch-text")
+                .text($(e.target).text())
+            $(this).parents(".filters__switch-modal").toggle(0)
+            $(this)
+                .parents(".filters__switch")
+                .toggleClass("filters__switch--active")
         }
     })
     $(".filter__date-element").on("click", function () {
@@ -122,13 +138,98 @@ $(window).on("load", () => {
     $(window).on("scroll", () => {
         pageYOffset
             ? ($(".header").addClass("header--scroll"),
-              $(".menu__desktop").addClass("menu__desktop--scroll"))
+                $(".menu__desktop").addClass("menu__desktop--scroll"))
             : ($(".header").removeClass("header--scroll"),
-              $(".menu__desktop").removeClass("menu__desktop--scroll"))
+                $(".menu__desktop").removeClass("menu__desktop--scroll"))
+    })
+    $(".poster-slider__stories").on("click", (e) => {
+        const stories = $(e.target).parents(".stories")
+            ; (stories.length || $(e.target).hasClass("stories")) &&
+                toggleModal(stories.index())
+    })
+    $(".modal__close").on("click", closeModal)
+    $(".modal-overlay").on("click", (e) => {
+        if ($(e.target).hasClass("modal-overlay--active")) closeModal()
+    })
+    $('.user__button').on('click', () => {
+        if (!$('.user__about-text--active').length) {
+            $('.user__about-text').toggleClass('user__about-text--active')
+            const el = $('.user__about-text'),
+                curHeight = el.height(),
+                autoHeight = el.css('height', 'auto').height();
+            el.height(curHeight).animate({ height: autoHeight }, 200);
+            $('.user__button').text($('.user__button').data('switch-text-start'))
+        } else {
+            $('.user__about-text').toggleClass('user__about-text--active')
+            $('.user__about-text').css('height', $('.user__about-text').data('text-height'))
+            $('.user__button').text($('.user__button').data('switch-text-end'))
+        }
     })
     // /event
     // ----------------------------------------------
     // unique function
+    function toggleModal(initNumberSlider = 0) {
+        scrollEmulation()
+        $(".modal-overlay").toggleClass(`modal-overlay--active`)
+        $(".modal").toggleClass("modal--active")
+        const swiperGallery = new Swiper(".modal__content", {
+            effect: "coverflow",
+            grabCursor: true,
+            spaceBetween: 30,
+            slidesPerView: "auto",
+            initialSlide: initNumberSlider,
+            navigation: {
+                nextEl: ".stories-arrow-right",
+                prevEl: ".stories-arrow-left",
+            },
+            on: {
+                slideChange: (swiper) => {
+                    playVideoStories(swiper)
+                },
+                init: (swiper) => {
+                    playVideoStories(swiper)
+                },
+            },
+        })
+    }
+    function playVideoStories({ slides, activeIndex, prevSlides }) {
+        const videoStories = $(slides[activeIndex]).children(
+            ".modal__slide-video"
+        ),
+            prevVideoStories = $(slides[activeIndex - 1]).children(
+                ".modal__slide-video"
+            ),
+            nextVideoStories = $(slides[activeIndex + 1]).children(
+                ".modal__slide-video"
+            )
+        prevVideoStories.length &&
+            prevVideoStories.attr(
+                "src",
+                prevVideoStories.attr("src").replace(/\?autoplay=1/gi, "")
+            )
+        nextVideoStories.length &&
+            nextVideoStories.attr(
+                "src",
+                nextVideoStories.attr("src").replace(/\?autoplay=1/gi, "")
+            )
+        videoStories.length &&
+            videoStories.attr(
+                "src",
+                videoStories.attr("src").replace(/\?autoplay=1/gi, "") +
+                "?autoplay=1"
+            )
+    }
+    function closeModal() {
+        scrollEmulation()
+        $(".modal__slide-video").attr(
+            "src",
+            $(".modal__slide-video")
+                .attr("src")
+                .replace(/\?autoplay=1/gi, "")
+        )
+        $(".modal-overlay").removeClass("modal-overlay--active")
+        $(".modal").removeClass("modal--active")
+    }
     // /unique function
     // ----------------------------------------------
     // Page load
@@ -208,11 +309,12 @@ $(window).on("load", () => {
             },
         },
     })
+
     $(window).width() <= 1299 &&
         ($(".menu__desktop-more-list")
             .children(".menu__desktop-element")
             .appendTo($(".menu__desktop")),
-        $("#menu-element-more").addClass("delete"))
-
+            $("#menu-element-more").addClass("delete"))
+    baguetteBox.run(".gallery")
     // /Page load
 })

@@ -1,0 +1,197 @@
+.participant {
+    .user {
+        background-image: url(../images/user-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 260px;
+        padding-top: 100px;
+        @media (max-width: 900px) {
+            padding-top: 50px;
+        }
+        @media (max-width: 500px) {
+            padding-top: 20px;
+        }
+        &__wrapper {
+            background: rgba(37, 37, 38, 0.6);
+            backdrop-filter: blur(150px);
+            border-radius: 20px;
+            max-width: 1280px;
+            padding: 40px 40px 70px 40px;
+            @media (max-width: 900px) {
+                padding: 40px 40px 60px 40px;
+            }
+            @media (max-width: 500px) {
+                padding: 33px 20px 50px;
+            }
+        }
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            @media (max-width: 900px) {
+                flex-wrap: wrap;
+            }
+            &-avatar {
+                flex: 0 0 140px;
+                height: 140px;
+                position: relative;
+                margin-right: 37px;
+                @media (max-width: 900px) {
+                    flex: 0 0 100px;
+                    height: 100px;
+                }
+                &-img {
+                    border-radius: 50%;
+                    height: 140px;
+                    @media (max-width: 900px) {
+                        height: 100px;
+                    }
+                }
+            }
+            &-inner {
+                margin-top: 20px;
+                flex-grow: 1;
+                @media (max-width: 900px) {
+                    margin-top: 0;
+                }
+                @media (max-width: 500px) {
+                    margin-top: 20px;
+                }
+            }
+            &-title {
+                max-width: 534px;
+            }
+            &-tags {
+                display: flex;
+                margin-top: 10px;
+            }
+            &-tag {
+                margin-right: 5px;
+                height: 28px;
+                display: block;
+                line-height: 28px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 5px;
+                padding: 0 8px;
+            }
+            &-ui {
+                margin-top: 32px;
+                flex: 0 0 auto;
+                margin-left: 20px;
+                @media (max-width: 900px) {
+                    flex: 0 1 100%;
+                    margin-left: 0;
+                }
+            }
+        }
+        &__grid {
+            display: grid;
+            max-width: 740px;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 5px;
+            margin: 35px 0 25px 177px;
+            @media (max-width: 900px) {
+                margin: 40px 0 25px;
+                grid-template-areas:
+                    "look like"
+                    "age  age"
+                    "city city"
+                    "he he"
+                    "place place";
+            }
+            @media (max-width: 700px) {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        &__text {
+            color: #8c8c8d;
+            font-size: 16px;
+            line-height: 25px;
+            flex: 0 0 404px;
+            display: flex;
+            &--look {
+                @media (max-width: 700px) {
+                    grid-area: look;
+                }
+            }
+            &--like {
+                @media (max-width: 700px) {
+                    justify-content: flex-end;
+                    grid-area: like;
+                }
+            }
+            &--age {
+                @media (max-width: 700px) {
+                    grid-area: age;
+                }
+            }
+            &--he {
+                @media (max-width: 700px) {
+                    grid-area: he;
+                }
+            }
+            &--city {
+                @media (max-width: 700px) {
+                    grid-area: city;
+                }
+            }
+            &--place {
+                @media (max-width: 700px) {
+                    grid-area: place;
+                }
+            }
+            &--big {
+                margin-bottom: 20px;
+            }
+            &-bold {
+                color: #fff;
+                font-weight: 500;
+                margin: 0 5px;
+            }
+        }
+        &__about {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            margin-left: 177px;
+            @media (max-width: 900px) {
+                margin-left: 0;
+            }
+            &-text {
+                max-width: 740px;
+                height: 90px;
+                overflow: hidden;
+                font-size: 18px;
+                line-height: 30px;
+                margin-left: 177px;
+                position: relative;
+                transition: 0.3s;
+                @media (max-width: 900px) {
+                    margin-left: 0;
+                }
+                &--active {
+                    &::after {
+                        opacity: 0;
+                    }
+                }
+                &::after {
+                    position: absolute;
+                    content: url(../images/shadow-bottom.svg);
+                    bottom: -5px;
+                    width: 100%;
+                    left: 0;
+                    transition: 0.6s;
+                }
+            }
+        }
+        &__button {
+            font-size: 16px;
+            margin-left: 177px;
+            font-weight: 500;
+            line-height: 25px;
+            margin-top: 7px;
+            color: #8c8c8d;
+            @media (max-width: 900px) {
+                margin-left: 0;
+            }
+        }
+    }
+}

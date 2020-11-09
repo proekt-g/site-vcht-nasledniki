@@ -2,7 +2,7 @@ $default-font: "Graphik LCG";
 $content-width: 1280px;
 $heightHeader: 100px;
 $heightFooter: 140px;
-$minHeightMain: calc(100vh - (#{$heightHeader} + #{$heightFooter}));
+$minHeightMain: calc(100vh - (#{$heightHeader} + #{$heightFooter} + 120px));
 $mainColor: #ffffff;
 $mainWeight: 400;
 $mainSize: 14px;
