@@ -145,7 +145,7 @@
                 </div>
               </div>
               <div class="user__header-ui ui">
-                <div class="ui__buttons">
+                <div class="user__header-buttons ui__buttons">
                   <button class="ui__like ui__like--active">Вам понравилось</button>
                   <button class="ui__share">
                     <svg width="20" height="16" viewBox="0 0 20 16" xmlns="http://www.w3.org/2000/svg" fill="none">
@@ -179,6 +179,139 @@
             </div>
             <button class="user__button" data-switch-text-start="Свернуть" data-switch-text-end="Развернуть">Развернуть</button>
           </div>
+        </div>
+      </section>
+      <section class="board">
+        <div class="board__container container">
+          <div class="board__header">
+            <button class="board__header-title board__header-title--hidden" id="board-information">Информация</button>
+            <button class="board__header-title board__header-title--active" id="board-work">
+              Работы <span class="board__header-title-amount">(2)</span>
+            </button>
+            <button class="board__header-title" id="board-team">Команда <span class="board__header-title-amount">(2)</span></button>
+          </div>
+          <div class="board__team">
+            <div class="board__list board__list--team">
+              <div class="board__user">
+                <img class="board__user-avatar" src="assets/images/board-avatar.jpg" alt="" />
+                <div class="board__user-name">Марина Каткова</div>
+              </div>
+              <div class="board__user">
+                <img class="board__user-avatar" src="assets/images/board-avatar.jpg" alt="" />
+                <div class="board__user-name">Елизавета Парфенова</div>
+              </div>
+            </div>
+          </div>
+          <div class="board__work">
+            <div class="board__title">Литературная гостиная</div>
+            <div class="board__list">
+              <a class="board__book book book" href="#">
+                <div class="book__picture book__picture--blue" data-color="blue">
+                  <img class="book__picture-img" src="assets/images/book-picture.png" alt="" />
+                  <div class="book__picture-info">
+                    <img class="book__picture-avatar" src="assets/images/book-avatar.jpg" alt="" />
+                    <div class="book__picture-name">Потеря времени</div>
+                    <div class="book__picture-author">Марина Каткова и Александра Парфенова</div>
+                    <svg width="17" height="5" viewBox="0 0 17 5" xmlns="http://www.w3.org/2000/svg" fill="none">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M.825 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.96-2.145-2.145-2.145zM6.546 2.553c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145l-.053-.001c-.212-1.051-1.04-1.879-2.091-2.092l-.001-.053zM12.266 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.961-2.145-2.145-2.145z"
+                        fill="#0C0C0D"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="book__name">Потеря времени</div>
+                <div class="book__text">Коллективная книга • Марина Каткова и Александра Парфенова</div>
+              </a>
+              <a class="board__book book book" href="#">
+                <div class="book__picture book__picture--blue" data-color="blue">
+                  <img class="book__picture-img" src="assets/images/book-picture.png" alt="" />
+                  <div class="book__picture-info">
+                    <img class="book__picture-avatar" src="assets/images/book-avatar.jpg" alt="" />
+                    <div class="book__picture-name">Потеря времени</div>
+                    <div class="book__picture-author">Марина Каткова и Александра Парфенова</div>
+                    <svg width="17" height="5" viewBox="0 0 17 5" xmlns="http://www.w3.org/2000/svg" fill="none">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M.825 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.96-2.145-2.145-2.145zM6.546 2.553c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145l-.053-.001c-.212-1.051-1.04-1.879-2.091-2.092l-.001-.053zM12.266 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.961-2.145-2.145-2.145z"
+                        fill="#0C0C0D"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="book__name">Потеря времени</div>
+                <div class="book__text">Коллективная книга • Марина Каткова и Александра Парфенова</div>
+              </a>
+            </div>
+            <div class="board__title">Выставка</div>
+            <div class="board__list">
+              <a class="board__box" href="#">
+                <img class="board__box-img" src="assets/images/board-picture.jpg" alt="" />
+                <div class="board__box-title">Северный город</div>
+                <div class="board__box-tag">Фото • Фото</div>
+              </a>
+              <a class="board__box" href="#">
+                <img class="board__box-img" src="assets/images/board-picture.jpg" alt="" />
+              </a>
+              <a class="board__box board__box--hidden" href="#">
+                <img class="board__box-img" src="assets/images/board-picture.jpg" alt="" />
+              </a>
+              <a class="board__box board__box--blur" href="#">
+                <img class="board__box-img" src="assets/images/board-picture.jpg" alt="" />
+                <div class="board__box-amount">Смотреть все 12</div>
+              </a>
+            </div>
+            <div class="board__title">Кинозал</div>
+            <div class="board__list">
+              <a class="board__informatio-card informatio-card" href="#">
+                <div class="informatio-card__picture">
+                  <div class="informatio-card__picture-icon">
+                    <div class="informatio-card__picture-icon-inner" data-tooltip="Номинация «Гагарин»">
+                      <svg class="" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                        <g clip-path="url(#a)">
+                          <circle cx="12" cy="11" r="10" fill="#fff" />
+                          <circle opacity=".2" cx="12" cy="11" r="10" fill="#3478FF" />
+                          <circle cx="12" cy="11" r="8.5" stroke="#3478FF" stroke-width="3" />
+                          <path
+                            d="M20.485 18.485c-2.25 2.25-5.303 3.515-8.485 3.515-3.183 0-6.235-1.264-8.485-3.515"
+                            stroke="#3478FF"
+                            stroke-width="3"
+                          />
+                          <path
+                            d="M20.5 12c0 3.729-3.382 7-8.5 7s-8.5-3.271-8.5-7 3.382-7 8.5-7 8.5 3.271 8.5 7z"
+                            stroke="#3478FF"
+                            stroke-width="2"
+                          />
+                          <path fill="#3478FF" d="M1 8h2v6h-2zM2 2h1v7h-1zM21 8h2v6h-2z" />
+                        </g>
+                        <defs>
+                          <clipPath id="a">
+                            <path fill="#fff" d="M0 0h24v24h-24z" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="informatio-card__picture-information">3 августа • 12:00 – 14:00 Мск</div>
+                  <div class="informatio-card__picture-play">
+                    <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M18.75 10.701C19.75 11.2783 19.75 12.7217 18.75 13.299L2.25 22.8253C1.25 23.4027 -1.07884e-06 22.681 -1.02837e-06 21.5263L-1.95552e-07 2.47372C-1.45079e-07 1.31902 1.25 0.597332 2.25 1.17468L18.75 10.701Z"
+                        fill="black"
+                      />
+                    </svg>
+                  </div>
+                  <img class="informatio-card__picture-img" src="assets/images/card.jpg" alt="card images" />
+                </div>
+                <div class="title-card">Меланхолия</div>
+                <div class="text-card">Кино • Документальные фильмы</div>
+              </a>
+            </div>
+          </div>
+          <div class="board__information"></div>
         </div>
       </section>
     </main>

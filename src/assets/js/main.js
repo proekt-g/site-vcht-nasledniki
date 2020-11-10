@@ -2,6 +2,9 @@ $(document).on("readystatechange", () => {
     document.readyState === "interactive" &&
         $(window).width() <= 500 &&
         $(".header__log-link").text($(".header__log-link").data("mobile-text"))
+    document.readyState === "interactive" &&
+        $(window).width() <= 700 &&
+        ($('.user__about, .user__grid, .user__about-text, .user__button').appendTo($('.board__information')))
 })
 
 $(window).on("load", () => {
@@ -47,6 +50,12 @@ $(window).on("load", () => {
         ajaxRequest("filter__container", "test.php")
     })
     // /Фильтр на странице participants.html
+    // Фильтр на странице cinema-hall.html
+    $("#cinema-hall-filter").on("input submit", (e) => {
+        e.preventDefault()
+        ajaxRequest("cinema-hall-filter", "test.php")
+    })
+    // /Фильтр на странице cinema-hall.html
     // Даты на странице poster.html
     $("#poster-filter").on("input submit", (e) => {
         e.preventDefault()
@@ -83,20 +92,37 @@ $(window).on("load", () => {
         ajaxRequest("crumbs-five", "test.php")
     })
     // /Фильтр на странице poster.html в блоке "Выставка"
-    $(".crumbs__crumb").on("click", (e) => {
-        $(e.target)
-            .parents(".crumbs__crumb")
+    // Фильтр на странице cinema-hall.html в блоке "Кино"
+    $("#cinema-crumbs-one").on("input submit", (e) => {
+        e.preventDefault()
+        ajaxRequest("cinema-crumbs-one", "test.php")
+    })
+    // /Фильтр на странице cinema-hall.html в блоке "Кино"
+    // Фильтр на странице cinema-hall.html в блоке "Анимация"
+    $("#cinema-crumbs-two").on("input submit", (e) => {
+        e.preventDefault()
+        ajaxRequest("cinema-crumbs-two", "test.php")
+    })
+    // /Фильтр на странице cinema-hall.html в блоке "Анимация"
+    $(".crumbs__crumb").on("click", function () {
+        $(this)
             .toggleClass("crumbs__crumb--active")
-        $(e.target).parents(".crumbs").children(".crumbs__crumb--active")
+        $(this).parents(".crumbs").children(".crumbs__crumb--active")
             .length === 0
-            ? $(e.target)
+            ? $(this)
                 .parents(".crumbs")
                 .children(".crumbs__clear")
                 .removeClass("crumbs__clear--active")
-            : $(e.target)
+            : $(this)
                 .parents(".crumbs")
                 .children(".crumbs__clear")
                 .addClass("crumbs__clear--active")
+        $('[data-name]').each((index, element) => {
+            console.log($(element)[0])
+            console.log($(`[data-name=${$(this).data('tag-name')}]`)[0])
+            $(element) !== $(`[data-name=${$(this).data('tag-name')}]`)[0] && $(element)[0].fadeToggle(100)
+        })
+
     })
     $(".crumbs__clear").on("click", function () {
         $(this)
@@ -114,15 +140,28 @@ $(window).on("load", () => {
         $(this).next().slideToggle(400)
     })
     $(".filters__switch-modal-label").on("click", function (e) {
-        if (!$(e.target).hasClass("filters__switch-modal-label--custom")) {
-            $(this)
-                .parents(".filters__switch")
-                .children(".filters__switch-text")
-                .text($(e.target).text())
-            $(this).parents(".filters__switch-modal").toggle(0)
-            $(this)
-                .parents(".filters__switch")
-                .toggleClass("filters__switch--active")
+        if (!$(this).parents('.cinema-hall').length) {
+            if (!$(e.target).hasClass("filters__switch-modal-label--custom")) {
+                $(this)
+                    .parents(".filters__switch")
+                    .children(".filters__switch-text")
+                    .text($(e.target).text())
+                $(this).parents(".filters__switch-modal").toggle(0)
+                $(this)
+                    .parents(".filters__switch")
+                    .toggleClass("filters__switch--active")
+            }
+        } else {
+            $(this).toggleClass('filters__switch-modal-label--active')
+            const amount = $('.filters__switch-modal-label--active').length,
+                input = $('.filters__switch-text');
+            amount
+                ? amount === 1
+                    ? input.text(input.data('text-one-check').replace('$', amount))
+                    : amount <= 4
+                        ? input.text(input.data('text-four-check').replace('$', amount))
+                        : input.text(input.data('text-nine-check').replace('$', amount))
+                : input.text(input.data('text-default'))
         }
     })
     $(".filter__date-element").on("click", function () {
@@ -165,9 +204,20 @@ $(window).on("load", () => {
             $('.user__button').text($('.user__button').data('switch-text-end'))
         }
     })
+    $('#board-team').on('click', toggleBoardTab.bind($('#board-team'), ['.board__work', '.board__information'], '.board__team'))
+    $('#board-work').on('click', toggleBoardTab.bind($('#board-work'), ['.board__team', '.board__information'], '.board__work'))
+    $('#board-information').on('click', toggleBoardTab.bind($('#board-information'), ['.board__team', '.board__work'], '.board__information'))
     // /event
     // ----------------------------------------------
     // unique function
+    function toggleBoardTab(selectorOldBlocks, selectorNewBlock) {
+        $('.board__header-title').removeClass('board__header-title--active')
+        $(this).addClass('board__header-title--active')
+        $(selectorOldBlocks.join(', ')).fadeOut(400)
+        setTimeout(() => {
+            $(selectorNewBlock).fadeIn(400)
+        }, 400)
+    }
     function toggleModal(initNumberSlider = 0) {
         scrollEmulation()
         $(".modal-overlay").toggleClass(`modal-overlay--active`)

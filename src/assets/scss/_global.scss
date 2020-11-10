@@ -314,6 +314,8 @@ main {
         align-items: center;
         opacity: 0;
         pointer-events: none;
+        flex: 0 0 34px;
+        cursor: pointer;
         &--active {
             opacity: 1;
             pointer-events: auto;
@@ -792,11 +794,11 @@ main {
         &--active {
             padding: 0 33px 0 62px;
             @media (max-width: 900px) {
-                padding: 0 33px 0 62px;
+                padding: 0 30px 0 56px;
             }
             &::after {
                 content: url(../images/like-active.svg);
-                left: 35px;
+                left: 24px;
             }
         }
     }
@@ -1138,4 +1140,37 @@ main {
 .swiper-button-disabled {
     opacity: 0;
     pointer-events: none;
+}
+.navigation {
+    margin: 40px 0 30px;
+    @media (max-width: 900px) {
+        margin: 30px 0;
+    }
+    &__container {
+        display: flex;
+    }
+    &__element {
+        font-size: 15px;
+        color: #858585;
+        padding-right: 21px;
+        margin-right: 5px;
+        position: relative;
+        &::after {
+            content: url(../images/arrow-right-dark.svg);
+            position: absolute;
+            right: 0;
+            opacity: 0.7;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+        &:hover {
+            color: #fff;
+        }
+        &--last {
+            color: #fff;
+            &::after {
+                display: none;
+            }
+        }
+    }
 }

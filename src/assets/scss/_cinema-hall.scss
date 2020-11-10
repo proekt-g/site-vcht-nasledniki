@@ -1,0 +1,100 @@
+.cinema-hall {
+    .filter__container {
+        @media (max-width: 1279px) {
+            padding-right: 0;
+        }
+    }
+    .filters {
+        margin-top: 50px;
+        // @media (max-width: 1279px) {
+        //     padding-right: 0;
+        // }
+        @media (max-width: 900px) {
+            margin-top: 40px;
+        }
+        @media (max-width: 500px) {
+            margin-top: 30px;
+        }
+        &__switch {
+            flex: 0 0 305px;
+            @media (max-width: 500px) {
+                flex: 0 1 100%;
+            }
+            &-modal {
+                width: 620px;
+                right: 0;
+                padding: 10px;
+                @media (max-width: 900px) {
+                    left: 0;
+                }
+                @media (max-width: 700px) {
+                    width: 400px;
+                }
+                @media (max-width: 500px) {
+                    width: 100%;
+                }
+                &-label {
+                    padding: 10px 0px 10px 32px;
+                    display: flex;
+                    align-items: center;
+                    border-radius: 5px;
+                    position: relative;
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.1);
+                        opacity: 1;
+                    }
+                    &--active {
+                        &::after {
+                            content: url(../images/check.svg);
+                            position: absolute;
+                            left: 3.7px;
+                        }
+                    }
+                    svg {
+                        margin-right: 8px;
+                    }
+                }
+            }
+        }
+    }
+    .content {
+        margin-top: 50px;
+        @media (max-width: 500px) {
+            margin-top: 40px;
+        }
+        &__container {
+            @media (max-width: 900px) {
+                padding-right: 0;
+            }
+        }
+        &__block {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px 0 -20px -20px;
+            @media (max-width: 900px) {
+                padding-right: 40px;
+            }
+            @media (max-width: 500px) {
+                margin: 20px 0 -10px;
+                padding-right: 20px;
+            }
+        }
+    }
+    .informatio-card {
+        margin: 20px 0px 20px 20px;
+        @media (max-width: 500px) {
+            flex: 0 1 100%;
+            margin: 10px 0;
+        }
+        &__picture {
+            @media (max-width: 500px) {
+                height: 206px;
+            }
+            &-img {
+                @media (max-width: 500px) {
+                    height: 206px;
+                }
+            }
+        }
+    }
+}
