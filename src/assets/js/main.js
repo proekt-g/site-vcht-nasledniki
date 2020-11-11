@@ -4,7 +4,7 @@ $(document).on("readystatechange", () => {
         $(".header__log-link").text($(".header__log-link").data("mobile-text"))
     document.readyState === "interactive" &&
         $(window).width() <= 700 &&
-        ($('.user__about, .user__grid, .user__about-text, .user__button').appendTo($('.board__information')))
+        ($('.user__about, .user__grid, .hidden-text, .hidden-button').appendTo($('.board__information')))
 })
 
 $(window).on("load", () => {
@@ -56,6 +56,12 @@ $(window).on("load", () => {
         ajaxRequest("cinema-hall-filter", "test.php")
     })
     // /Фильтр на странице cinema-hall.html
+    // Фильтр на странице literary-room.html
+    $("#literary-room-filter").on("input submit", (e) => {
+        e.preventDefault()
+        ajaxRequest("literary-room-filter", "test.php")
+    })
+    // /Фильтр на странице literary-room.html
     // Даты на странице poster.html
     $("#poster-filter").on("input submit", (e) => {
         e.preventDefault()
@@ -104,25 +110,34 @@ $(window).on("load", () => {
         ajaxRequest("cinema-crumbs-two", "test.php")
     })
     // /Фильтр на странице cinema-hall.html в блоке "Анимация"
-    $(".crumbs__crumb").on("click", function () {
-        $(this)
+    // Фильтр на странице literary-room.html в блоке "Литература"
+    $("#literary-crumbs-one").on("input submit", (e) => {
+        e.preventDefault()
+        ajaxRequest("literary-crumbs-one", "test.php")
+    })
+    // /Фильтр на странице literary-room.html в блоке "Литература"
+    // Фильтр на странице literary-room.html в блоке "Исполнители-чтецы"
+    $("#literary-crumbs-two").on("input submit", (e) => {
+        e.preventDefault()
+        ajaxRequest("literary-crumbs-two", "test.php")
+    })
+    // /Фильтр на странице literary-room.html в блоке "Исполнители-чтецы"
+
+    $(".crumbs__crumb").on("click", function (e) {
+        $(e.target).parents('.filter-top').length && ($(this).toggleClass('crumbs__crumb--active'), filterContentBlock())
+        $(e.target)
+            .parents(".crumbs__crumb")
             .toggleClass("crumbs__crumb--active")
-        $(this).parents(".crumbs").children(".crumbs__crumb--active")
+        $(e.target).parents(".crumbs").children(".crumbs__crumb--active")
             .length === 0
-            ? $(this)
+            ? $(e.target)
                 .parents(".crumbs")
                 .children(".crumbs__clear")
                 .removeClass("crumbs__clear--active")
-            : $(this)
+            : $(e.target)
                 .parents(".crumbs")
                 .children(".crumbs__clear")
                 .addClass("crumbs__clear--active")
-        $('[data-name]').each((index, element) => {
-            console.log($(element)[0])
-            console.log($(`[data-name=${$(this).data('tag-name')}]`)[0])
-            $(element) !== $(`[data-name=${$(this).data('tag-name')}]`)[0] && $(element)[0].fadeToggle(100)
-        })
-
     })
     $(".crumbs__clear").on("click", function () {
         $(this)
@@ -130,6 +145,8 @@ $(window).on("load", () => {
             .children(".crumbs__crumb")
             .removeClass("crumbs__crumb--active")
         $(this).removeClass("crumbs__clear--active")
+
+        filterContentBlock()
     })
     $("#menu-element-more").on("click", () => {
         $(".menu__desktop-more-list").slideToggle(400)
@@ -184,29 +201,36 @@ $(window).on("load", () => {
     $(".poster-slider__stories").on("click", (e) => {
         const stories = $(e.target).parents(".stories")
             ; (stories.length || $(e.target).hasClass("stories")) &&
-                toggleModal(stories.index())
+                toggleModal(stories.index(), stories.parents('.content').data('name'))
     })
     $(".modal__close").on("click", closeModal)
     $(".modal-overlay").on("click", (e) => {
         if ($(e.target).hasClass("modal-overlay--active")) closeModal()
     })
-    $('.user__button').on('click', () => {
-        if (!$('.user__about-text--active').length) {
-            $('.user__about-text').toggleClass('user__about-text--active')
-            const el = $('.user__about-text'),
+    $('.hidden-button').on('click', () => {
+        if (!$('.hidden-text--active').length) {
+            $('.hidden-text').toggleClass('hidden-text--active')
+            const el = $('.hidden-text'),
                 curHeight = el.height(),
                 autoHeight = el.css('height', 'auto').height();
             el.height(curHeight).animate({ height: autoHeight }, 200);
-            $('.user__button').text($('.user__button').data('switch-text-start'))
+            $('.hidden-button').text($('.hidden-button').data('switch-text-start'))
         } else {
-            $('.user__about-text').toggleClass('user__about-text--active')
-            $('.user__about-text').css('height', $('.user__about-text').data('text-height'))
-            $('.user__button').text($('.user__button').data('switch-text-end'))
+            $('.hidden-text').toggleClass('hidden-text--active')
+            $('.hidden-text').css('height', $('.hidden-text').data('text-height'))
+            $('.hidden-button').text($('.hidden-button').data('switch-text-end'))
         }
     })
     $('#board-team').on('click', toggleBoardTab.bind($('#board-team'), ['.board__work', '.board__information'], '.board__team'))
     $('#board-work').on('click', toggleBoardTab.bind($('#board-work'), ['.board__team', '.board__information'], '.board__work'))
     $('#board-information').on('click', toggleBoardTab.bind($('#board-information'), ['.board__team', '.board__work'], '.board__information'))
+
+    $('.filter-top__toggle-title').on('click', function () {
+        $('.filter-top__toggle-title').removeClass('filter-top__toggle-title--active')
+        $(this).addClass('filter-top__toggle-title--active')
+        $('.content').fadeOut(100)
+        $(`[data-name=${$(this).data('tag-name')}]`).fadeIn(100)
+    })
     // /event
     // ----------------------------------------------
     // unique function
@@ -218,11 +242,24 @@ $(window).on("load", () => {
             $(selectorNewBlock).fadeIn(400)
         }, 400)
     }
-    function toggleModal(initNumberSlider = 0) {
+    function filterContentBlock() {
+        const arrElements = [];
+        $('.content').fadeOut(100)
+        $('.crumbs__crumb--active').each((index, element) => {
+            $('.content').each((i, e) => {
+                $(e).data('name') === $(element).data('tag-name') && arrElements.push(e)
+            })
+        })
+        console.log(arrElements)
+        $(arrElements).length ? $(arrElements).fadeIn(100) : $('.content').fadeIn(100)
+    }
+    function toggleModal(initNumberSlider = 0, nameModal = false) {
+        const selectorSlider = `.modal-overlay${nameModal ? `[data-name="${nameModal}"]` : ''}`
+        console.log(selectorSlider + ' .modal')
         scrollEmulation()
-        $(".modal-overlay").toggleClass(`modal-overlay--active`)
-        $(".modal").toggleClass("modal--active")
-        const swiperGallery = new Swiper(".modal__content", {
+        $(selectorSlider).toggleClass(`modal-overlay--active`)
+        $(selectorSlider + ' .modal').toggleClass("modal--active")
+        const swiperGallery = new Swiper(selectorSlider + " .modal__content", {
             effect: "coverflow",
             grabCursor: true,
             spaceBetween: 30,
@@ -366,5 +403,6 @@ $(window).on("load", () => {
             .appendTo($(".menu__desktop")),
             $("#menu-element-more").addClass("delete"))
     baguetteBox.run(".gallery")
+
     // /Page load
 })

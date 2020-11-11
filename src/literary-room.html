@@ -114,20 +114,22 @@
         </div> -->
       </div>
     </header>
-    <main class="cinema-hall">
+    <main class="literary-room">
       <section class="navigation">
         <div class="navigation__container container">
           <a class="navigation__element" href="#">Афиша</a>
-          <div class="navigation__element navigation__element--last">Кинозал</div>
+          <div class="navigation__element navigation__element--last">Литературная гостиная</div>
         </div>
       </section>
       <section class="filter-top">
-        <form class="filter-top__container container" method="POST" id="cinema-hall-filter">
-          <div class="title">Кинозал</div>
+        <form class="filter-top__container container" method="POST" id="literary-room-filter">
+          <div class="title">Литературная гостиная</div>
           <div class="crumbs__container">
             <div class="crumbs">
-              <label class="crumbs__crumb" data-tag-name="cinema">Кино</label>
-              <label class="crumbs__crumb" data-tag-name="animation">Анимация</label>
+              <label class="crumbs__crumb" data-tag-name="literary">Литература</label>
+              <label class="crumbs__crumb" data-tag-name="action">Исполнители-чтецы</label>
+              <label class="crumbs__crumb" data-tag-name="media">Медиа</label>
+              <label class="crumbs__crumb" data-tag-name="book">Коллективная книга</label>
               <div class="crumbs__clear">
                 <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" fill="none">
                   <path
@@ -284,53 +286,23 @@
           </div>
         </form>
         <div class="filter-top__toggle">
-          <button class="filter-top__toggle-title filter-top__toggle-title--active title" data-tag-name="cinema">Кино</button>
-          <button class="filter-top__toggle-title title" data-tag-name="animation">Анимация</button>
+          <button class="filter-top__toggle-title filter-top__toggle-title--active title" data-tag-name="literary">Литература</button>
+          <button class="filter-top__toggle-title title" data-tag-name="action">Исполнители-чтецы</button>
+          <button class="filter-top__toggle-title title" data-tag-name="media">Медиа</button>
+          <button class="filter-top__toggle-title title" data-tag-name="book">Коллективная книга</button>
         </div>
       </section>
-      <section class="content content--active" data-name="cinema">
+      <section class="content content--active" data-name="literary">
         <div class="content__container container">
-          <div class="title">Кино</div>
-          <form class="crumbs" method="POST" id="cinema-crumbs-one">
+          <div class="title">Литература</div>
+          <form class="crumbs" method="POST" id="literary-crumbs-one">
             <label class="crumbs__crumb"
-              >Декоративно-прикладное
+              >Проза
               <input class="filters-input" type="checkbox" id="filters-five-1" name="filters-five-1" />
             </label>
             <label class="crumbs__crumb"
-              >Изобразительное
+              >Поэзия
               <input class="filters-input" type="checkbox" id="filters-five-2" name="filters-five-2" />
-            </label>
-            <label class="crumbs__crumb"
-              >Фото
-              <input class="filters-input" type="checkbox" id="filters-five-3" name="filters-five-3" />
-            </label>
-            <label class="crumbs__crumb"
-              >Игровая индустрия: дизайн
-              <input class="filters-input" type="checkbox" id="filters-five-4" name="filters-five-4" />
-            </label>
-            <label class="crumbs__crumb"
-              >Технический дизайн
-              <input class="filters-input" type="checkbox" id="filters-five-5" name="filters-five-5" />
-            </label>
-            <label class="crumbs__crumb"
-              >Технический дизайн
-              <input class="filters-input" type="checkbox" id="filters-five-5" name="filters-five-5" />
-            </label>
-            <label class="crumbs__crumb"
-              >Технический дизайн
-              <input class="filters-input" type="checkbox" id="filters-five-5" name="filters-five-5" />
-            </label>
-            <label class="crumbs__crumb"
-              >Технический дизайн
-              <input class="filters-input" type="checkbox" id="filters-five-5" name="filters-five-5" />
-            </label>
-            <label class="crumbs__crumb"
-              >Технический дизайн
-              <input class="filters-input" type="checkbox" id="filters-five-5" name="filters-five-5" />
-            </label>
-            <label class="crumbs__crumb"
-              >Технический дизайн
-              <input class="filters-input" type="checkbox" id="filters-five-5" name="filters-five-5" />
             </label>
             <button class="crumbs__clear">
               <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" fill="none">
@@ -342,224 +314,253 @@
             </button>
           </form>
           <div class="content__block">
-            <a class="informatio-card swiper-slide" href="#">
-              <div class="informatio-card__picture">
-                <div class="informatio-card__picture-icon">
-                  <div class="informatio-card__picture-icon-inner" data-tooltip="Номинация «Есенинская Русь»">
-                    <svg width="22" height="23" viewBox="0 0 22 23" xmlns="http://www.w3.org/2000/svg" fill="none">
-                      <path
-                        d="M11 22.044l-.814-.655c-.536-.431-1.537-1.017-2.561-1.551-1.02-.532-2.006-.984-2.494-1.159l-.012-.004c-.651-.233-2.009-.719-3.153-1.578-1.159-.871-2.179-2.192-1.929-4.07.123-.927.504-1.565 1.009-1.999.492-.422 1.066-.62 1.523-.743l.411-.102.183-.044c-.361-.4-.566-.826-.628-1.255-.064-.442.029-.852.207-1.196.176-.34.437-.619.724-.815.283-.193.623-.327.966-.327.395 0 .751.112 1.014.2l.098.033.249.08.159.034.017-.037c.067-.164.129-.515.129-1.206 0-1.312.759-2.441 1.61-3.285.859-.853 1.883-1.488 2.574-1.817l.715-.341.716.341c.691.33 1.715.965 2.575 1.817.851.845 1.61 1.973 1.61 3.285 0 .691.061 1.041.129 1.206l.017.037.159-.034.249-.08.098-.033c.263-.088.62-.2 1.014-.2.343 0 .684.134.966.327.287.196.548.475.724.815.178.343.271.753.207 1.196-.062.429-.267.855-.628 1.255l.183.044.411.102c.457.123 1.032.321 1.523.743.506.434.886 1.072 1.009 1.999.25 1.878-.769 3.199-1.929 4.07-1.144.86-2.502 1.345-3.153 1.578l-.012.004c-.487.174-1.474.627-2.494 1.159-1.024.534-2.025 1.12-2.561 1.551l-.814.655z"
-                        fill="#FDBF00"
-                      />
-                      <path
-                        fill="#FF7816"
-                        d="M10.501 11h1v12h-1zM18.257 13l.576.817-7.356 5.186-.576-.817 7.356-5.186zM3.744 13l-.576.817 7.356 5.186.576-.817-7.356-5.186zM-1.507 18.688l.576.817-4.087 2.881-.576-.817zM7.6 12l-.576.817 4.087 2.881.576-.817z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <div class="informatio-card__picture-information">3 августа • 12:00 – 14:00 Мск</div>
-                <div class="informatio-card__picture-play">
-                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a class="book" href="#">
+              <div class="book__picture book__picture--blue" data-color="blue">
+                <img class="book__picture-img" src="assets/images/book-picture.png" alt="" />
+                <div class="book__picture-info">
+                  <img class="book__picture-avatar" src="assets/images/book-avatar.jpg" alt="" />
+                  <div class="book__picture-name">Зелёная книга</div>
+                  <div class="book__picture-author">Ирина Истомина</div>
+                  <svg width="17" height="5" viewBox="0 0 17 5" xmlns="http://www.w3.org/2000/svg" fill="none">
                     <path
-                      d="M18.75 10.701C19.75 11.2783 19.75 12.7217 18.75 13.299L2.25 22.8253C1.25 23.4027 -1.07884e-06 22.681 -1.02837e-06 21.5263L-1.95552e-07 2.47372C-1.45079e-07 1.31902 1.25 0.597332 2.25 1.17468L18.75 10.701Z"
-                      fill="black"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M.825 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.96-2.145-2.145-2.145zM6.546 2.553c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145l-.053-.001c-.212-1.051-1.04-1.879-2.091-2.092l-.001-.053zM12.266 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.961-2.145-2.145-2.145z"
+                      fill="#0C0C0D"
                     />
                   </svg>
                 </div>
-                <img class="informatio-card__picture-img" src="assets/images/card.jpg" alt="card images" />
               </div>
-              <div class="title-card">Бабочка</div>
-              <div class="text-card">Театральное • Коллектив «Маска»</div>
+              <div class="book__name">Зелёная книга</div>
+              <div class="book__text">Литература • Ирина Истомина</div>
             </a>
-            <a class="informatio-card swiper-slide" href="#">
-              <div class="informatio-card__picture">
-                <div class="informatio-card__picture-icon">
-                  <div
-                    class="informatio-card__picture-icon-inner"
-                    data-tooltip="Номинация, посвященная 
-                      творчеству И.А. Бунина"
-                  >
-                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
-                      <g clip-path="url(#a)">
-                        <path d="M12.073 5.736c-3.464.306-6.017-2.249-5.712-5.712 3.464-.306 6.017 2.249 5.712 5.712z" fill="#0AA564" />
-                        <path d="M12 9c0-1.667.5-5.5 2.5-7.5" stroke="#0AA564" />
-                        <path
-                          d="M17.817 5.727c-.826-.22-1.68-.175-2.519.095-2.154.694-4.444.694-6.597 0-.838-.27-1.693-.315-2.519-.095-3.298.879-4.889 5.65-3.555 10.657 1.334 5.008 5.089 8.354 8.387 7.475l.011-.003c.641-.173 1.309-.173 1.949 0l.011.003c3.298.879 7.053-2.468 8.387-7.475 1.334-5.007-.258-9.779-3.556-10.657z"
-                          fill="#99DF3F"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="a">
-                          <path fill="#fff" d="M0 0h24v24h-24z" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </div>
-                </div>
-                <div class="informatio-card__picture-information">3 августа • 13:30 – 17:00 Мск</div>
-                <div class="informatio-card__picture-play">
-                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a class="book" href="#">
+              <div class="book__picture book__picture--blue" data-color="blue">
+                <img class="book__picture-img" src="assets/images/book-picture.png" alt="" />
+                <div class="book__picture-info">
+                  <img class="book__picture-avatar" src="assets/images/book-avatar.jpg" alt="" />
+                  <div class="book__picture-name">Потеря времени</div>
+                  <div class="book__picture-author">Марина Каткова и Александра Парфенова</div>
+                  <svg width="17" height="5" viewBox="0 0 17 5" xmlns="http://www.w3.org/2000/svg" fill="none">
                     <path
-                      d="M18.75 10.701C19.75 11.2783 19.75 12.7217 18.75 13.299L2.25 22.8253C1.25 23.4027 -1.07884e-06 22.681 -1.02837e-06 21.5263L-1.95552e-07 2.47372C-1.45079e-07 1.31902 1.25 0.597332 2.25 1.17468L18.75 10.701Z"
-                      fill="black"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M.825 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.96-2.145-2.145-2.145zM6.546 2.553c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145l-.053-.001c-.212-1.051-1.04-1.879-2.091-2.092l-.001-.053zM12.266 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.961-2.145-2.145-2.145z"
+                      fill="#0C0C0D"
                     />
                   </svg>
                 </div>
-                <img class="informatio-card__picture-img" src="assets/images/card-2.jpg" alt="card images" />
               </div>
-              <div class="title-card">Лавр</div>
-              <div class="text-card">Театральное • Коллектив «Страна чудес»</div>
+              <div class="book__name">Потеря времени</div>
+              <div class="book__text">Коллективная книга • Марина Каткова и Александра Парфенова</div>
             </a>
-            <a class="informatio-card swiper-slide" href="#">
-              <div class="informatio-card__picture">
-                <div class="informatio-card__picture-information">3 августа • 12:20 – 13:00 Мск</div>
-                <div class="informatio-card__picture-play">
-                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a class="book" href="#">
+              <div class="book__picture book__picture--blue" data-color="blue">
+                <img class="book__picture-img" src="assets/images/book-picture.png" alt="" />
+                <div class="book__picture-info">
+                  <img class="book__picture-avatar" src="assets/images/book-avatar.jpg" alt="" />
+                  <div class="book__picture-name">Потеря времени</div>
+                  <div class="book__picture-author">Марина Каткова и Александра Парфенова</div>
+                  <svg width="17" height="5" viewBox="0 0 17 5" xmlns="http://www.w3.org/2000/svg" fill="none">
                     <path
-                      d="M18.75 10.701C19.75 11.2783 19.75 12.7217 18.75 13.299L2.25 22.8253C1.25 23.4027 -1.07884e-06 22.681 -1.02837e-06 21.5263L-1.95552e-07 2.47372C-1.45079e-07 1.31902 1.25 0.597332 2.25 1.17468L18.75 10.701Z"
-                      fill="black"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M.825 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.96-2.145-2.145-2.145zM6.546 2.553c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145l-.053-.001c-.212-1.051-1.04-1.879-2.091-2.092l-.001-.053zM12.266 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.961-2.145-2.145-2.145z"
+                      fill="#0C0C0D"
                     />
                   </svg>
                 </div>
-                <img class="informatio-card__picture-img" src="assets/images/card-1.jpg" alt="card images" />
               </div>
-              <div class="title-card">Чужая страна</div>
-              <div class="text-card">Кино • Марина Каткова, Елизавета Парфенова, Коллектив «Дети Земли»</div>
+              <div class="book__name">Потеря времени</div>
+              <div class="book__text">Коллективная книга • Марина Каткова и Александра Парфенова</div>
             </a>
-            <a class="informatio-card swiper-slide" href="#">
-              <div class="informatio-card__picture">
-                <div class="informatio-card__picture-information">3 августа • 15:00 – 15:30 Мск</div>
-                <div class="informatio-card__picture-play">
-                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a class="book" href="#">
+              <div class="book__picture book__picture--green" data-color="blue">
+                <img class="book__picture-img" src="assets/images/book-picture.png" alt="" />
+                <div class="book__picture-info">
+                  <img class="book__picture-avatar" src="assets/images/book-avatar.jpg" alt="" />
+                  <div class="book__picture-name">Что такое ядро?</div>
+                  <div class="book__picture-author">Анна Цой</div>
+                  <svg width="17" height="5" viewBox="0 0 17 5" xmlns="http://www.w3.org/2000/svg" fill="none">
                     <path
-                      d="M18.75 10.701C19.75 11.2783 19.75 12.7217 18.75 13.299L2.25 22.8253C1.25 23.4027 -1.07884e-06 22.681 -1.02837e-06 21.5263L-1.95552e-07 2.47372C-1.45079e-07 1.31902 1.25 0.597332 2.25 1.17468L18.75 10.701Z"
-                      fill="black"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M.825 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.96-2.145-2.145-2.145zM6.546 2.553c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145l-.053-.001c-.212-1.051-1.04-1.879-2.091-2.092l-.001-.053zM12.266 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.961-2.145-2.145-2.145z"
+                      fill="#0C0C0D"
                     />
                   </svg>
                 </div>
-                <img class="informatio-card__picture-img" src="assets/images/card-3.jpg" alt="card images" />
               </div>
-              <div class="title-card">Клятва</div>
-              <div class="text-card">Кино • Павел Залесский</div>
+              <div class="book__name">Что такое ядро?</div>
+              <div class="book__text">Литература • Анна Цой</div>
             </a>
-            <a class="informatio-card swiper-slide" href="#">
-              <div class="informatio-card__picture">
-                <div class="informatio-card__picture-information">3 августа • 15:00 – 15:30 Мск</div>
-                <div class="informatio-card__picture-play">
-                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a class="book" href="#">
+              <div class="book__picture book__picture--blue" data-color="blue">
+                <img class="book__picture-img" src="assets/images/book-picture.png" alt="" />
+                <div class="book__picture-info">
+                  <img class="book__picture-avatar" src="assets/images/book-avatar.jpg" alt="" />
+                  <div class="book__picture-name">Потеря времени</div>
+                  <div class="book__picture-author">Марина Каткова и Александра Парфенова</div>
+                  <svg width="17" height="5" viewBox="0 0 17 5" xmlns="http://www.w3.org/2000/svg" fill="none">
                     <path
-                      d="M18.75 10.701C19.75 11.2783 19.75 12.7217 18.75 13.299L2.25 22.8253C1.25 23.4027 -1.07884e-06 22.681 -1.02837e-06 21.5263L-1.95552e-07 2.47372C-1.45079e-07 1.31902 1.25 0.597332 2.25 1.17468L18.75 10.701Z"
-                      fill="black"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M.825 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.96-2.145-2.145-2.145zM6.546 2.553c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145l-.053-.001c-.212-1.051-1.04-1.879-2.091-2.092l-.001-.053zM12.266 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.961-2.145-2.145-2.145z"
+                      fill="#0C0C0D"
                     />
                   </svg>
                 </div>
-                <img class="informatio-card__picture-img" src="assets/images/card-3.jpg" alt="card images" />
               </div>
-              <div class="title-card">Клятва</div>
-              <div class="text-card">Кино • Павел Залесский</div>
+              <div class="book__name">Потеря</div>
+              <div class="book__text">Марина Каткова и Александра Парфенова</div>
             </a>
-            <a class="informatio-card swiper-slide" href="#">
-              <div class="informatio-card__picture">
-                <div class="informatio-card__picture-information">3 августа • 15:00 – 15:30 Мск</div>
-                <div class="informatio-card__picture-play">
-                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a class="book" href="#">
+              <div class="book__picture book__picture--violet" data-color="blue">
+                <img class="book__picture-img" src="assets/images/book-picture.png" alt="" />
+                <div class="book__picture-info">
+                  <img class="book__picture-avatar" src="assets/images/book-avatar.jpg" alt="" />
+                  <div class="book__picture-name">Красный платок</div>
+                  <div class="book__picture-author">Коллектив «Дизайн-студия»</div>
+                  <svg width="17" height="5" viewBox="0 0 17 5" xmlns="http://www.w3.org/2000/svg" fill="none">
                     <path
-                      d="M18.75 10.701C19.75 11.2783 19.75 12.7217 18.75 13.299L2.25 22.8253C1.25 23.4027 -1.07884e-06 22.681 -1.02837e-06 21.5263L-1.95552e-07 2.47372C-1.45079e-07 1.31902 1.25 0.597332 2.25 1.17468L18.75 10.701Z"
-                      fill="black"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M.825 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.96-2.145-2.145-2.145zM6.546 2.553c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145l-.053-.001c-.212-1.051-1.04-1.879-2.091-2.092l-.001-.053zM12.266 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.961-2.145-2.145-2.145z"
+                      fill="#0C0C0D"
                     />
                   </svg>
                 </div>
-                <img class="informatio-card__picture-img" src="assets/images/card-3.jpg" alt="card images" />
               </div>
-              <div class="title-card">Клятва</div>
-              <div class="text-card">Кино • Павел Залесский</div>
+              <div class="book__name">Красный платок</div>
+              <div class="book__text">Коллектив «Дизайн-студия»</div>
             </a>
-            <a class="informatio-card swiper-slide" href="#">
-              <div class="informatio-card__picture">
-                <div class="informatio-card__picture-icon">
-                  <div class="informatio-card__picture-icon-inner" data-tooltip="Номинация «Гагарин»">
-                    <svg class="" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
-                      <g clip-path="url(#a)">
-                        <circle cx="12" cy="11" r="10" fill="#fff" />
-                        <circle opacity=".2" cx="12" cy="11" r="10" fill="#3478FF" />
-                        <circle cx="12" cy="11" r="8.5" stroke="#3478FF" stroke-width="3" />
-                        <path
-                          d="M20.485 18.485c-2.25 2.25-5.303 3.515-8.485 3.515-3.183 0-6.235-1.264-8.485-3.515"
-                          stroke="#3478FF"
-                          stroke-width="3"
-                        />
-                        <path d="M20.5 12c0 3.729-3.382 7-8.5 7s-8.5-3.271-8.5-7 3.382-7 8.5-7 8.5 3.271 8.5 7z" stroke="#3478FF" stroke-width="2" />
-                        <path fill="#3478FF" d="M1 8h2v6h-2zM2 2h1v7h-1zM21 8h2v6h-2z" />
-                      </g>
-                      <defs>
-                        <clipPath id="a">
-                          <path fill="#fff" d="M0 0h24v24h-24z" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </div>
-                </div>
-                <div class="informatio-card__picture-information">3 августа • 12:00 – 14:00 Мск</div>
-                <div class="informatio-card__picture-play">
-                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a class="book" href="#">
+              <div class="book__picture book__picture--blue" data-color="blue">
+                <img class="book__picture-img" src="assets/images/book-picture.png" alt="" />
+                <div class="book__picture-info">
+                  <img class="book__picture-avatar" src="assets/images/book-avatar.jpg" alt="" />
+                  <div class="book__picture-name">Дом на берегу багровой реки</div>
+                  <div class="book__picture-author">Албек Самбуров</div>
+                  <svg width="17" height="5" viewBox="0 0 17 5" xmlns="http://www.w3.org/2000/svg" fill="none">
                     <path
-                      d="M18.75 10.701C19.75 11.2783 19.75 12.7217 18.75 13.299L2.25 22.8253C1.25 23.4027 -1.07884e-06 22.681 -1.02837e-06 21.5263L-1.95552e-07 2.47372C-1.45079e-07 1.31902 1.25 0.597332 2.25 1.17468L18.75 10.701Z"
-                      fill="black"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M.825 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.96-2.145-2.145-2.145zM6.546 2.553c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145l-.053-.001c-.212-1.051-1.04-1.879-2.091-2.092l-.001-.053zM12.266 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.961-2.145-2.145-2.145z"
+                      fill="#0C0C0D"
                     />
                   </svg>
                 </div>
-                <img class="informatio-card__picture-img" src="assets/images/card.jpg" alt="card images" />
               </div>
-              <div class="title-card">Меланхолия</div>
-              <div class="text-card">Кино • Антон Истомин</div>
+              <div class="book__name">Дом на берегу багровой реки</div>
+              <div class="book__text">Литература • Албек Самбуров</div>
             </a>
-            <a class="informatio-card swiper-slide" href="#">
-              <div class="informatio-card__picture">
-                <div class="informatio-card__picture-icon">
-                  <div class="informatio-card__picture-icon-inner" data-tooltip="Номинация «Гагарин»">
-                    <svg class="" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
-                      <g clip-path="url(#a)">
-                        <circle cx="12" cy="11" r="10" fill="#fff" />
-                        <circle opacity=".2" cx="12" cy="11" r="10" fill="#3478FF" />
-                        <circle cx="12" cy="11" r="8.5" stroke="#3478FF" stroke-width="3" />
-                        <path
-                          d="M20.485 18.485c-2.25 2.25-5.303 3.515-8.485 3.515-3.183 0-6.235-1.264-8.485-3.515"
-                          stroke="#3478FF"
-                          stroke-width="3"
-                        />
-                        <path d="M20.5 12c0 3.729-3.382 7-8.5 7s-8.5-3.271-8.5-7 3.382-7 8.5-7 8.5 3.271 8.5 7z" stroke="#3478FF" stroke-width="2" />
-                        <path fill="#3478FF" d="M1 8h2v6h-2zM2 2h1v7h-1zM21 8h2v6h-2z" />
-                      </g>
-                      <defs>
-                        <clipPath id="a">
-                          <path fill="#fff" d="M0 0h24v24h-24z" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </div>
-                </div>
-                <div class="informatio-card__picture-information">3 августа • 12:00 – 14:00 Мск</div>
-                <div class="informatio-card__picture-play">
-                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a class="book" href="#">
+              <div class="book__picture book__picture--blue" data-color="blue">
+                <img class="book__picture-img" src="assets/images/book-picture.png" alt="" />
+                <div class="book__picture-info">
+                  <img class="book__picture-avatar" src="assets/images/book-avatar.jpg" alt="" />
+                  <div class="book__picture-name">Потеря времени</div>
+                  <div class="book__picture-author">Марина Каткова и Александра Парфенова</div>
+                  <svg width="17" height="5" viewBox="0 0 17 5" xmlns="http://www.w3.org/2000/svg" fill="none">
                     <path
-                      d="M18.75 10.701C19.75 11.2783 19.75 12.7217 18.75 13.299L2.25 22.8253C1.25 23.4027 -1.07884e-06 22.681 -1.02837e-06 21.5263L-1.95552e-07 2.47372C-1.45079e-07 1.31902 1.25 0.597332 2.25 1.17468L18.75 10.701Z"
-                      fill="black"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M.825 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.96-2.145-2.145-2.145zM6.546 2.553c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145l-.053-.001c-.212-1.051-1.04-1.879-2.091-2.092l-.001-.053zM12.266 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.961-2.145-2.145-2.145z"
+                      fill="#0C0C0D"
                     />
                   </svg>
                 </div>
-                <img class="informatio-card__picture-img" src="assets/images/card.jpg" alt="card images" />
               </div>
-              <div class="title-card">Меланхолия</div>
-              <div class="text-card">Кино • Антон Истомин</div>
+              <div class="book__name">Потеря времени</div>
+              <div class="book__text">Коллективная книга • Марина Каткова и Александра Парфенова</div>
+            </a>
+            <a class="book" href="#">
+              <div class="book__picture book__picture--blue" data-color="blue">
+                <img class="book__picture-img" src="assets/images/book-picture.png" alt="" />
+                <div class="book__picture-info">
+                  <img class="book__picture-avatar" src="assets/images/book-avatar.jpg" alt="" />
+                  <div class="book__picture-name">Потеря времени</div>
+                  <div class="book__picture-author">Марина Каткова и Александра Парфенова</div>
+                  <svg width="17" height="5" viewBox="0 0 17 5" xmlns="http://www.w3.org/2000/svg" fill="none">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M.825 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.96-2.145-2.145-2.145zM6.546 2.553c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145l-.053-.001c-.212-1.051-1.04-1.879-2.091-2.092l-.001-.053zM12.266 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.961-2.145-2.145-2.145z"
+                      fill="#0C0C0D"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="book__name">Потеря времени</div>
+              <div class="book__text">Коллективная книга • Марина Каткова и Александра Парфенова</div>
+            </a>
+            <a class="book" href="#">
+              <div class="book__picture book__picture--blue" data-color="blue">
+                <img class="book__picture-img" src="assets/images/book-picture.png" alt="" />
+                <div class="book__picture-info">
+                  <img class="book__picture-avatar" src="assets/images/book-avatar.jpg" alt="" />
+                  <div class="book__picture-name">Потеря времени</div>
+                  <div class="book__picture-author">Марина Каткова и Александра Парфенова</div>
+                  <svg width="17" height="5" viewBox="0 0 17 5" xmlns="http://www.w3.org/2000/svg" fill="none">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M.825 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.96-2.145-2.145-2.145zM6.546 2.553c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145l-.053-.001c-.212-1.051-1.04-1.879-2.091-2.092l-.001-.053zM12.266 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.961-2.145-2.145-2.145z"
+                      fill="#0C0C0D"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="book__name">Потеря времени</div>
+              <div class="book__text">Коллективная книга • Марина Каткова и Александра Парфенова</div>
+            </a>
+            <a class="book" href="#">
+              <div class="book__picture book__picture--blue" data-color="blue">
+                <img class="book__picture-img" src="assets/images/book-picture.png" alt="" />
+                <div class="book__picture-info">
+                  <img class="book__picture-avatar" src="assets/images/book-avatar.jpg" alt="" />
+                  <div class="book__picture-name">Потеря времени</div>
+                  <div class="book__picture-author">Марина Каткова и Александра Парфенова</div>
+                  <svg width="17" height="5" viewBox="0 0 17 5" xmlns="http://www.w3.org/2000/svg" fill="none">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M.825 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.96-2.145-2.145-2.145zM6.546 2.553c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145l-.053-.001c-.212-1.051-1.04-1.879-2.091-2.092l-.001-.053zM12.266 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.961-2.145-2.145-2.145z"
+                      fill="#0C0C0D"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="book__name">Потеря времени</div>
+              <div class="book__text">Коллективная книга • Марина Каткова и Александра Парфенова</div>
+            </a>
+            <a class="book" href="#">
+              <div class="book__picture book__picture--blue" data-color="blue">
+                <img class="book__picture-img" src="assets/images/book-picture.png" alt="" />
+                <div class="book__picture-info">
+                  <img class="book__picture-avatar" src="assets/images/book-avatar.jpg" alt="" />
+                  <div class="book__picture-name">Потеря времени</div>
+                  <div class="book__picture-author">Марина Каткова и Александра Парфенова</div>
+                  <svg width="17" height="5" viewBox="0 0 17 5" xmlns="http://www.w3.org/2000/svg" fill="none">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M.825 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.96-2.145-2.145-2.145zM6.546 2.553c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145l-.053-.001c-.212-1.051-1.04-1.879-2.091-2.092l-.001-.053zM12.266 2.554c1.185 0 2.145-.96 2.145-2.145 0 1.185.96 2.145 2.145 2.145-1.185 0-2.145.96-2.145 2.145 0-1.185-.961-2.145-2.145-2.145z"
+                      fill="#0C0C0D"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="book__name">Потеря времени</div>
+              <div class="book__text">Коллективная книга • Марина Каткова и Александра Парфенова</div>
             </a>
           </div>
         </div>
       </section>
-      <section class="content" data-name="animation">
+      <section class="content" data-name="action">
         <div class="content__container container">
-          <div class="title">Анимация</div>
-          <form class="crumbs" method="POST" id="cinema-crumbs-two">
+          <div class="title">Исполнители-чтецы</div>
+          <form class="crumbs" method="POST" id="literary-crumbs-two">
             <label class="crumbs__crumb"
               >Покадровая анимация
               <input class="filters-input" type="checkbox" id="filters-five-1" name="filters-five-1" />
@@ -577,93 +578,6 @@
               </svg>
             </button>
           </form>
-          <div class="content__block">
-            <a class="informatio-card swiper-slide" href="#">
-              <div class="informatio-card__picture">
-                <div class="informatio-card__picture-icon">
-                  <div class="informatio-card__picture-icon-inner" data-tooltip="Номинация «Есенинская Русь»">
-                    <svg width="22" height="23" viewBox="0 0 22 23" xmlns="http://www.w3.org/2000/svg" fill="none">
-                      <path
-                        d="M11 22.044l-.814-.655c-.536-.431-1.537-1.017-2.561-1.551-1.02-.532-2.006-.984-2.494-1.159l-.012-.004c-.651-.233-2.009-.719-3.153-1.578-1.159-.871-2.179-2.192-1.929-4.07.123-.927.504-1.565 1.009-1.999.492-.422 1.066-.62 1.523-.743l.411-.102.183-.044c-.361-.4-.566-.826-.628-1.255-.064-.442.029-.852.207-1.196.176-.34.437-.619.724-.815.283-.193.623-.327.966-.327.395 0 .751.112 1.014.2l.098.033.249.08.159.034.017-.037c.067-.164.129-.515.129-1.206 0-1.312.759-2.441 1.61-3.285.859-.853 1.883-1.488 2.574-1.817l.715-.341.716.341c.691.33 1.715.965 2.575 1.817.851.845 1.61 1.973 1.61 3.285 0 .691.061 1.041.129 1.206l.017.037.159-.034.249-.08.098-.033c.263-.088.62-.2 1.014-.2.343 0 .684.134.966.327.287.196.548.475.724.815.178.343.271.753.207 1.196-.062.429-.267.855-.628 1.255l.183.044.411.102c.457.123 1.032.321 1.523.743.506.434.886 1.072 1.009 1.999.25 1.878-.769 3.199-1.929 4.07-1.144.86-2.502 1.345-3.153 1.578l-.012.004c-.487.174-1.474.627-2.494 1.159-1.024.534-2.025 1.12-2.561 1.551l-.814.655z"
-                        fill="#FDBF00"
-                      />
-                      <path
-                        fill="#FF7816"
-                        d="M10.501 11h1v12h-1zM18.257 13l.576.817-7.356 5.186-.576-.817 7.356-5.186zM3.744 13l-.576.817 7.356 5.186.576-.817-7.356-5.186zM-1.507 18.688l.576.817-4.087 2.881-.576-.817zM7.6 12l-.576.817 4.087 2.881.576-.817z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <div class="informatio-card__picture-information">3 августа • 12:00 – 14:00 Мск</div>
-                <div class="informatio-card__picture-play">
-                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M18.75 10.701C19.75 11.2783 19.75 12.7217 18.75 13.299L2.25 22.8253C1.25 23.4027 -1.07884e-06 22.681 -1.02837e-06 21.5263L-1.95552e-07 2.47372C-1.45079e-07 1.31902 1.25 0.597332 2.25 1.17468L18.75 10.701Z"
-                      fill="black"
-                    />
-                  </svg>
-                </div>
-                <img class="informatio-card__picture-img" src="assets/images/card.jpg" alt="card images" />
-              </div>
-              <div class="title-card">Бабочка</div>
-              <div class="text-card">Театральное • Коллектив «Маска»</div>
-            </a>
-            <a class="informatio-card swiper-slide" href="#">
-              <div class="informatio-card__picture">
-                <div class="informatio-card__picture-icon">
-                  <div
-                    class="informatio-card__picture-icon-inner"
-                    data-tooltip="Номинация, посвященная 
-                      творчеству И.А. Бунина"
-                  >
-                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
-                      <g clip-path="url(#a)">
-                        <path d="M12.073 5.736c-3.464.306-6.017-2.249-5.712-5.712 3.464-.306 6.017 2.249 5.712 5.712z" fill="#0AA564" />
-                        <path d="M12 9c0-1.667.5-5.5 2.5-7.5" stroke="#0AA564" />
-                        <path
-                          d="M17.817 5.727c-.826-.22-1.68-.175-2.519.095-2.154.694-4.444.694-6.597 0-.838-.27-1.693-.315-2.519-.095-3.298.879-4.889 5.65-3.555 10.657 1.334 5.008 5.089 8.354 8.387 7.475l.011-.003c.641-.173 1.309-.173 1.949 0l.011.003c3.298.879 7.053-2.468 8.387-7.475 1.334-5.007-.258-9.779-3.556-10.657z"
-                          fill="#99DF3F"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="a">
-                          <path fill="#fff" d="M0 0h24v24h-24z" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </div>
-                </div>
-                <div class="informatio-card__picture-information">3 августа • 13:30 – 17:00 Мск</div>
-                <div class="informatio-card__picture-play">
-                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M18.75 10.701C19.75 11.2783 19.75 12.7217 18.75 13.299L2.25 22.8253C1.25 23.4027 -1.07884e-06 22.681 -1.02837e-06 21.5263L-1.95552e-07 2.47372C-1.45079e-07 1.31902 1.25 0.597332 2.25 1.17468L18.75 10.701Z"
-                      fill="black"
-                    />
-                  </svg>
-                </div>
-                <img class="informatio-card__picture-img" src="assets/images/card-2.jpg" alt="card images" />
-              </div>
-              <div class="title-card">Лавр</div>
-              <div class="text-card">Театральное • Коллектив «Страна чудес»</div>
-            </a>
-            <a class="informatio-card swiper-slide" href="#">
-              <div class="informatio-card__picture">
-                <div class="informatio-card__picture-information">3 августа • 12:20 – 13:00 Мск</div>
-                <div class="informatio-card__picture-play">
-                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M18.75 10.701C19.75 11.2783 19.75 12.7217 18.75 13.299L2.25 22.8253C1.25 23.4027 -1.07884e-06 22.681 -1.02837e-06 21.5263L-1.95552e-07 2.47372C-1.45079e-07 1.31902 1.25 0.597332 2.25 1.17468L18.75 10.701Z"
-                      fill="black"
-                    />
-                  </svg>
-                </div>
-                <img class="informatio-card__picture-img" src="assets/images/card-1.jpg" alt="card images" />
-              </div>
-              <div class="title-card">Чужая страна</div>
-              <div class="text-card">Кино • Марина Каткова, Елизавета Парфенова, Коллектив «Дети Земли»</div>
-            </a>
-          </div>
         </div>
       </section>
       <button class="button-more"><span class="button-more__text">Показать ещё 10</span></button>

@@ -188,7 +188,7 @@ main {
             }
         }
         &-modal {
-            z-index: 5;
+            z-index: 7;
             border-radius: 8px;
             background: rgba(37, 37, 38, 0.6);
             backdrop-filter: blur(150px);
@@ -1173,4 +1173,93 @@ main {
             }
         }
     }
+}
+.filter-top {
+    &__container {
+        @media (max-width: 1279px) {
+            padding-right: 0;
+        }
+    }
+    .crumbs__container {
+        @media (max-width: 500px) {
+            display: none;
+        }
+    }
+    &__toggle {
+        display: none;
+        @media (max-width: 500px) {
+            display: flex;
+            margin-top: 40px;
+            padding-left: 20px;
+            overflow: auto;
+        }
+        &-title {
+            margin-right: 20px;
+            color: #858586;
+            flex: 0 0 auto;
+            &:last-child {
+                padding-right: 20px;
+            }
+            &--active {
+                color: #fff;
+            }
+        }
+    }
+}
+.button-more {
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+    display: none;
+    @media (max-width: 500px) {
+        display: block;
+    }
+    &__text {
+        display: inline-block;
+        background: linear-gradient(0deg, #252526, #252526);
+        border-radius: 50px;
+        font-size: 16px;
+        line-height: 50px;
+        height: 50px;
+        padding: 0 55px;
+    }
+}
+.tags {
+    display: flex;
+    &__tag {
+        margin-right: 5px;
+        height: 28px;
+        display: block;
+        line-height: 28px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        padding: 0 8px;
+    }
+}
+.hidden-text {
+    overflow: hidden;
+    font-size: 18px;
+    line-height: 30px;
+    position: relative;
+    transition: 0.3s;
+    &--active {
+        &::after {
+            opacity: 0;
+        }
+    }
+    &::after {
+        position: absolute;
+        content: url(../images/shadow-bottom.svg);
+        bottom: -5px;
+        width: 100%;
+        left: 0;
+        transition: 0.6s;
+    }
+}
+.hidden-button {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25px;
+    margin-top: 7px;
+    color: #8c8c8d;
 }
