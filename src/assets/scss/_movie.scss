@@ -1,0 +1,15 @@
+.movie {
+    &__container {
+        position: relative;
+        iframe {
+            position: absolute;
+            right: -20px;
+            top: -140px;
+            width: 960px;
+            height: 600px;
+        }
+    }
+}
+.header {
+    background-color: transparent;
+}

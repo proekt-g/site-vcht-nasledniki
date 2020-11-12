@@ -5,6 +5,15 @@ $(document).on("readystatechange", () => {
     document.readyState === "interactive" &&
         $(window).width() <= 700 &&
         ($('.user__about, .user__grid, .hidden-text, .hidden-button').appendTo($('.board__information')))
+    document.readyState === "interactive" &&
+        $(window).width() <= 1279 &&
+        ($('.information__title, .user__about-text, .hidden-text, .user__about-button').appendTo($('.mobile__container')))
+    document.readyState === "interactive" &&
+        $(window).width() <= 900 &&
+        ($('.mobile__container').prepend($('.information__box')))
+    document.readyState === "interactive" &&
+        $(window).width() <= 700 &&
+        ($('.information__container').prepend($('.navigation')))
 })
 
 $(window).on("load", () => {
@@ -203,6 +212,11 @@ $(window).on("load", () => {
             ; (stories.length || $(e.target).hasClass("stories")) &&
                 toggleModal(stories.index(), stories.parents('.content').data('name'))
     })
+    $(".content__gallery").on("click", (e) => {
+        const stories = $(e.target).parents(".content__gallery-item")
+            ; (stories.length || $(e.target).hasClass("content__gallery-item")) &&
+                toggleModal(stories.index())
+    })
     $(".modal__close").on("click", closeModal)
     $(".modal-overlay").on("click", (e) => {
         if ($(e.target).hasClass("modal-overlay--active")) closeModal()
@@ -255,7 +269,7 @@ $(window).on("load", () => {
     }
     function toggleModal(initNumberSlider = 0, nameModal = false) {
         const selectorSlider = `.modal-overlay${nameModal ? `[data-name="${nameModal}"]` : ''}`
-        console.log(selectorSlider + ' .modal')
+        $('.modal-overlay').data('pagination-text') && ($('.modal__slide-title').html($('.modal-overlay').data('pagination-text').replace(/\[.*\]$/, '') + ' <span class="modal__slide-title-dark">' + $('.modal-overlay').data('pagination-text').replace(/.*\[/, '').replace(/\].*/, '').replace('$', `<span class="modal__slide-title-active">${initNumberSlider + 1}</span>`).replace('&', $('.modal__slide').length) + '</span>'))
         scrollEmulation()
         $(selectorSlider).toggleClass(`modal-overlay--active`)
         $(selectorSlider + ' .modal').toggleClass("modal--active")
@@ -272,6 +286,7 @@ $(window).on("load", () => {
             on: {
                 slideChange: (swiper) => {
                     playVideoStories(swiper)
+                    $('.modal__slide-title-active').length && $('.modal__slide-title-active').text(swiper.activeIndex + 1)
                 },
                 init: (swiper) => {
                     playVideoStories(swiper)
@@ -308,7 +323,7 @@ $(window).on("load", () => {
     }
     function closeModal() {
         scrollEmulation()
-        $(".modal__slide-video").attr(
+        $(".modal__slide-video").length && $(".modal__slide-video").attr(
             "src",
             $(".modal__slide-video")
                 .attr("src")
@@ -404,5 +419,20 @@ $(window).on("load", () => {
             $("#menu-element-more").addClass("delete"))
     baguetteBox.run(".gallery")
 
+    // console.log(document.querySelector('.content__gallery'))
+    const test = Bricks({
+        container: '.content__gallery',
+        packed: 'data-grid',
+        sizes: [
+            { columns: 1, gutter: 20 },
+            { mq: '500px', columns: 2, gutter: 10 },
+            { mq: '700px', columns: 3, gutter: 10 },
+            { mq: '900px', columns: 4, gutter: 10 },
+            { mq: '1279px', columns: 4, gutter: 20 }
+        ]
+    })
+    $(window).width() > 500 && test.pack()
+    // instance.pack()
     // /Page load
-})
+});
+

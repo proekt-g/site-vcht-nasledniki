@@ -1143,6 +1143,7 @@ main {
 }
 .navigation {
     margin: 40px 0 30px;
+    overflow: auto;
     @media (max-width: 900px) {
         margin: 30px 0;
     }
@@ -1155,6 +1156,7 @@ main {
         padding-right: 21px;
         margin-right: 5px;
         position: relative;
+        flex: 0 0 auto;
         &::after {
             content: url(../images/arrow-right-dark.svg);
             position: absolute;
@@ -1226,8 +1228,11 @@ main {
 }
 .tags {
     display: flex;
+    flex-wrap: wrap;
+    margin-top: -5px;
     &__tag {
         margin-right: 5px;
+        margin-top: 5px;
         height: 28px;
         display: block;
         line-height: 28px;
@@ -1262,4 +1267,40 @@ main {
     line-height: 25px;
     margin-top: 7px;
     color: #8c8c8d;
+}
+.user-box {
+    display: flex;
+    margin-bottom: 50px;
+    align-items: center;
+    &__avatar {
+        flex: 0 0 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+    &__info {
+        margin-left: 20px;
+    }
+    &__name {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 25px;
+        margin-bottom: 5px;
+    }
+    &__place {
+        color: #b6b6b6;
+        line-height: 20px;
+    }
+}
+.nomination-tag {
+    background: rgba(49, 50, 51, 0.6);
+    backdrop-filter: blur(20px);
+    border-radius: 50px;
+    line-height: 20px;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 15px;
+    padding: 8px 15px;
+    svg {
+        margin-right: 9px;
+    }
 }

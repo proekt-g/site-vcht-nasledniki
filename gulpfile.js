@@ -37,6 +37,7 @@ gulp.task("js-libs", function () {
         .src([
             "node_modules/swiper/swiper-bundle.min.js",
             "node_modules/baguettebox.js/dist/baguetteBox.min.js",
+            'node_modules/bricks.js/dist/bricks.js'
         ])
         .pipe(concat("_libs.js"))
         .pipe(gulp.dest("src/assets/js"))
