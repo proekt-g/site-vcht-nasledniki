@@ -115,75 +115,292 @@
       </div>
     </header>
     <main class="movie">
+      <section class="navigation">
+        <div class="navigation__container container">
+          <a class="navigation__element" href="#">Афиша</a>
+          <a class="navigation__element" href="#">Кинозал</a>
+          <div class="navigation__element navigation__element--last">Меланхолия</div>
+        </div>
+      </section>
       <div class="movie__container container">
         <iframe
-          src="https://www.youtube.com/embed/LXb3EKWsInQ?&modestbranding=1&mute=1&autoplay=1&showinfo=0"
+          src="https://www.youtube.com/embed/LXb3EKWsInQ?&mute=1&autoplay=1&showinfo=0"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
       </div>
-      <section class="navigation">
-        <div class="navigation__container container">
-          <a class="navigation__element" href="#">Афиша</a>
-          <a class="navigation__element" href="#">Выставка</a>
-          <div class="navigation__element navigation__element--last">Северный город</div>
+      <section class="info">
+        <div class="title">Меланхолия</div>
+        <div class="info__tags tags">
+          <div class="tags__tag tags__tag--violet">3 августа • 12:20 – 13:00 Мск</div>
+          <div class="tags__tag">Кино • Документальные фильмы</div>
+        </div>
+        <div class="nomination-tag">
+          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <g clip-path="url(#a)">
+              <path
+                d="M7.932 23.066c-.536 0-.946-.126-1.23-.378-.284-.252-.436-.602-.456-1.05h.876c.048.476.306.714.774.714.476 0 .714-.206.714-.618 0-.412-.23-.618-.69-.618h-.336v-.648h.312c.436 0 .654-.19.654-.57 0-.16-.052-.288-.156-.384-.1-.1-.246-.15-.438-.15-.204 0-.368.058-.492.174-.12.112-.192.27-.216.474h-.858c.024-.404.172-.73.444-.978.28-.256.66-.384 1.14-.384.46 0 .826.11 1.098.33.264.216.396.494.396.834 0 .456-.236.766-.708.93.26.06.464.176.612.348.148.172.222.392.222.66 0 .408-.148.73-.444.966-.292.232-.698.348-1.218.348zM11.72 23.066c-.504 0-.894-.128-1.17-.384-.256-.232-.396-.552-.42-.96h.894c.024.192.084.336.18.432.1.112.27.168.51.168.216 0 .382-.068.498-.204.116-.14.174-.326.174-.558 0-.232-.062-.414-.186-.546-.124-.136-.294-.204-.51-.204-.348 0-.622.114-.822.342h-.54l.06-2.442h2.718v.738h-1.992l-.018 1.074c.212-.264.53-.396.954-.396.388 0 .704.126.948.378.244.256.366.612.366 1.068 0 .456-.15.818-.45 1.086-.296.272-.694.408-1.194.408zM15.831 22.304c.588 0 .882-.454.882-1.362v-.192c0-.9-.298-1.35-.894-1.35-.604 0-.906.45-.906 1.35v.204c0 .9.306 1.35.918 1.35zm-.024.762c-.576 0-1.028-.188-1.356-.564-.34-.372-.51-.886-.51-1.542v-.204c0-.652.174-1.168.522-1.548.34-.372.79-.558 1.35-.558s1.01.18 1.35.54c.344.376.516.892.516 1.548v.198c0 .656-.166 1.176-.498 1.56-.344.38-.802.57-1.374.57z"
+                fill="#FF7816"
+              ></path>
+              <path
+                d="M17.793 5.096c-3.513-.73-5.794 2.962-5.794 2.962s-2.281-3.692-5.794-2.962c-3.513.73-5.292 6.566.411 10.946h10.767c5.703-4.38 3.924-10.216.411-10.946z"
+                fill="#FDBF00"
+              ></path>
+              <path
+                d="M19.183 14.343c-.49.58-1.087 1.151-1.799 1.698h-5.384v-7.984s.577-.933 1.597-1.769c1.009-.826 2.451-1.556 4.198-1.193 3.074.639 4.82 5.187 1.389 9.248z"
+                fill="#FF7816"
+              ></path>
+              <path fill="#FF9F00" d="M11 0h2v17h-2zM-2.5 15.5v2h-7v-2zM6 15h12v2h-12z"></path>
+            </g>
+            <defs>
+              <clipPath id="a"><path fill="#fff" d="M0 0h24v24h-24z"></path></clipPath>
+            </defs>
+          </svg>
+          Номинация, приуроченная к 350-летию со Дня рождения Петра I
+        </div>
+        <div class="ui">
+          <div class="ui__buttons">
+            <button class="ui__like">Нравится</button>
+            <button class="ui__share">
+              <svg width="20" height="16" viewBox="0 0 20 16" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <path
+                  d="M10 11h-2c-1.64-.001-3.25.447-4.654 1.295-1.404.848-2.55 2.063-3.314 3.515-.021-.27-.032-.54-.032-.81 0-5.523 4.477-10 10-10v-5l10 8-10 8v-5z"
+                  fill="#fff"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div class="ui__text">
+            Понравилось:
+            <span class="ui__span"> 256 людям</span>
+          </div>
+        </div>
+        <div class="user-box">
+          <img class="user-box__avatar" src="assets/images/avatar-60.jpg" alt="" />
+          <div class="user-box__info">
+            <div class="user-box__name">Ирина Истомина</div>
+            <div class="user-box__place">Комсомольск на Амуре, Россия</div>
+          </div>
         </div>
       </section>
-      <section class="info">
+      <section class="slider">
         <div class="container">
-          <div class="title">Меланхолия</div>
-          <div class="info__tags tags">
-            <div class="tags__tag">3 августа • 12:20 – 13:00 Мск</div>
-            <div class="tags__tag">Кино • Документальные фильмы</div>
+          <div class="slider-title">Другие работы в «Кино»</div>
+        </div>
+        <div class="poster-slider__slider swiper-container swiper-container-initialized swiper-container-horizontal" style="cursor: grab">
+          <div class="swiper-wrapper" id="swiper-wrapper-ad3b719eaf263f56" aria-live="polite" style="transform: translate3d(0px, 0px, 0px)">
+            <a class="informatio-card swiper-slide swiper-slide-active" href="#" role="group" aria-label="1 / 7" style="margin-right: 20px">
+              <div class="informatio-card__picture">
+                <div class="informatio-card__picture-icon">
+                  <div class="informatio-card__picture-icon-inner" data-tooltip="Номинация «Гагарин»">
+                    <svg class="" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                      <g clip-path="url(#a)">
+                        <circle cx="12" cy="11" r="10" fill="#fff"></circle>
+                        <circle opacity=".2" cx="12" cy="11" r="10" fill="#3478FF"></circle>
+                        <circle cx="12" cy="11" r="8.5" stroke="#3478FF" stroke-width="3"></circle>
+                        <path
+                          d="M20.485 18.485c-2.25 2.25-5.303 3.515-8.485 3.515-3.183 0-6.235-1.264-8.485-3.515"
+                          stroke="#3478FF"
+                          stroke-width="3"
+                        ></path>
+                        <path
+                          d="M20.5 12c0 3.729-3.382 7-8.5 7s-8.5-3.271-8.5-7 3.382-7 8.5-7 8.5 3.271 8.5 7z"
+                          stroke="#3478FF"
+                          stroke-width="2"
+                        ></path>
+                        <path fill="#3478FF" d="M1 8h2v6h-2zM2 2h1v7h-1zM21 8h2v6h-2z"></path>
+                      </g>
+                      <defs>
+                        <clipPath id="a">
+                          <path fill="#fff" d="M0 0h24v24h-24z"></path>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </div>
+                </div>
+                <div class="informatio-card__picture-information">3 августа • 12:00 – 14:00 Мск</div>
+                <div class="informatio-card__picture-play">
+                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M18.75 10.701C19.75 11.2783 19.75 12.7217 18.75 13.299L2.25 22.8253C1.25 23.4027 -1.07884e-06 22.681 -1.02837e-06 21.5263L-1.95552e-07 2.47372C-1.45079e-07 1.31902 1.25 0.597332 2.25 1.17468L18.75 10.701Z"
+                      fill="black"
+                    ></path>
+                  </svg>
+                </div>
+                <img class="informatio-card__picture-img" src="assets/images/card.jpg" alt="card images" />
+              </div>
+              <div class="title-card">Меланхолия</div>
+              <div class="text-card">Кино • Антон Истомин</div>
+            </a>
+            <a class="informatio-card swiper-slide swiper-slide-next" href="#" role="group" aria-label="2 / 7" style="margin-right: 20px">
+              <div class="informatio-card__picture">
+                <div class="informatio-card__picture-information">3 августа • 12:20 – 13:00 Мск</div>
+                <div class="informatio-card__picture-play">
+                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M18.75 10.701C19.75 11.2783 19.75 12.7217 18.75 13.299L2.25 22.8253C1.25 23.4027 -1.07884e-06 22.681 -1.02837e-06 21.5263L-1.95552e-07 2.47372C-1.45079e-07 1.31902 1.25 0.597332 2.25 1.17468L18.75 10.701Z"
+                      fill="black"
+                    ></path>
+                  </svg>
+                </div>
+                <img class="informatio-card__picture-img" src="assets/images/card-1.jpg" alt="card images" />
+              </div>
+              <div class="title-card">Чужая страна</div>
+              <div class="text-card">Кино • Марина Каткова, Елизавета Парфенова, Коллектив «Дети Земли»</div>
+            </a>
+            <a class="informatio-card swiper-slide" href="#" role="group" aria-label="3 / 7" style="margin-right: 20px">
+              <div class="informatio-card__picture">
+                <div class="informatio-card__picture-icon">
+                  <div class="informatio-card__picture-icon-inner" data-tooltip="Номинация, посвященная творчеству Ф.М. Достоевского">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M5 18.295c.529-2.471 3.341-8.83 8-11.795s8.412-3.029 10.001-3.029c-.28.91-.738 2.316-1.361 3.825l-8.82 5.09 6.711-.987c-.553.833-1.162 1.573-1.824 2.131-4.142 3.494-8.375 4.119-11.496 4.579-.425.063-.83.122-1.21.186z"
+                        fill="#3D6AF2"
+                      ></path>
+                      <path
+                        d="M5 18.295l-.536-.115-.169.788.795-.132-.09-.54zm18.001-14.824l.524.161.218-.709h-.742v.548zm-1.361 3.825l.274.475.162-.093.071-.172-.506-.209zm-8.82 5.09l-.274-.475.354 1.017-.08-.542zm6.711-.987l.456.303.68-1.024-1.216.179.08.542zm-1.824 2.131l-.353-.419.353.419zm-11.496 4.579l-.08-.542.08.542zm6.495-12.071c-2.429 1.546-4.35 3.956-5.725 6.265-1.374 2.307-2.236 4.571-2.516 5.878l1.071.23c.249-1.164 1.058-3.316 2.386-5.547 1.328-2.23 3.142-4.482 5.372-5.901l-.588-.924zm10.295-3.115c-1.64 0-5.512.072-10.295 3.115l.588.924c4.535-2.886 8.17-2.944 9.707-2.944v-1.096zm-.855 4.582c.632-1.532 1.096-2.955 1.378-3.873l-1.047-.322c-.277.901-.73 2.289-1.344 3.778l1.013.418zm-9.053 5.355l8.82-5.09-.548-.949-8.82 5.09.548.949zm6.357-2.003l-6.711.987.159 1.084 6.711-.987-.159-1.084zm-1.391 3.092c.714-.602 1.356-1.387 1.927-2.247l-.913-.606c-.536.807-1.112 1.502-1.721 2.015l.706.838zm-11.769 4.702c3.129-.462 7.5-1.101 11.769-4.702l-.706-.838c-4.015 3.387-8.11 3.997-11.223 4.456l.16 1.084zm-1.2.184c.375-.063.774-.121 1.2-.184l-.16-1.084c-.424.063-.834.123-1.221.188l.18 1.081z"
+                        fill="#3D6AF2"
+                      ></path>
+                      <path d="M2 22.5c1.5-2 2.7-3.8 5.5-6.6s7-5.9 9-7.4" stroke="#C5CEEC"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="informatio-card__picture-information">3 августа • 13:00 – 14:30 Мск</div>
+                <div class="informatio-card__picture-play">
+                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M18.75 10.701C19.75 11.2783 19.75 12.7217 18.75 13.299L2.25 22.8253C1.25 23.4027 -1.07884e-06 22.681 -1.02837e-06 21.5263L-1.95552e-07 2.47372C-1.45079e-07 1.31902 1.25 0.597332 2.25 1.17468L18.75 10.701Z"
+                      fill="black"
+                    ></path>
+                  </svg>
+                </div>
+                <img class="informatio-card__picture-img" src="assets/images/card-2.jpg" alt="card images" />
+              </div>
+              <div class="title-card">Алиса</div>
+              <div class="text-card">Кино • Константин Цой</div>
+            </a>
+            <a class="informatio-card swiper-slide" href="#" role="group" aria-label="4 / 7" style="margin-right: 20px">
+              <div class="informatio-card__picture">
+                <div class="informatio-card__picture-information">3 августа • 15:00 – 15:30 Мск</div>
+                <div class="informatio-card__picture-play">
+                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M18.75 10.701C19.75 11.2783 19.75 12.7217 18.75 13.299L2.25 22.8253C1.25 23.4027 -1.07884e-06 22.681 -1.02837e-06 21.5263L-1.95552e-07 2.47372C-1.45079e-07 1.31902 1.25 0.597332 2.25 1.17468L18.75 10.701Z"
+                      fill="black"
+                    ></path>
+                  </svg>
+                </div>
+                <img class="informatio-card__picture-img" src="assets/images/card-3.jpg" alt="card images" />
+              </div>
+              <div class="title-card">Клятва</div>
+              <div class="text-card">Кино • Павел Залесский</div>
+            </a>
+            <a class="informatio-card swiper-slide" href="#" role="group" aria-label="5 / 7" style="margin-right: 20px">
+              <div class="informatio-card__picture">
+                <div class="informatio-card__picture-information">3 августа • 15:00 – 15:30 Мск</div>
+                <div class="informatio-card__picture-play">
+                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M18.75 10.701C19.75 11.2783 19.75 12.7217 18.75 13.299L2.25 22.8253C1.25 23.4027 -1.07884e-06 22.681 -1.02837e-06 21.5263L-1.95552e-07 2.47372C-1.45079e-07 1.31902 1.25 0.597332 2.25 1.17468L18.75 10.701Z"
+                      fill="black"
+                    ></path>
+                  </svg>
+                </div>
+                <img class="informatio-card__picture-img" src="assets/images/card-3.jpg" alt="card images" />
+              </div>
+              <div class="title-card">Клятва</div>
+              <div class="text-card">Кино • Павел Залесский</div>
+            </a>
+            <a class="informatio-card swiper-slide" href="#" role="group" aria-label="6 / 7" style="margin-right: 20px">
+              <div class="informatio-card__picture">
+                <div class="informatio-card__picture-information">3 августа • 15:00 – 15:30 Мск</div>
+                <div class="informatio-card__picture-play">
+                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M18.75 10.701C19.75 11.2783 19.75 12.7217 18.75 13.299L2.25 22.8253C1.25 23.4027 -1.07884e-06 22.681 -1.02837e-06 21.5263L-1.95552e-07 2.47372C-1.45079e-07 1.31902 1.25 0.597332 2.25 1.17468L18.75 10.701Z"
+                      fill="black"
+                    ></path>
+                  </svg>
+                </div>
+                <img class="informatio-card__picture-img" src="assets/images/card-3.jpg" alt="card images" />
+              </div>
+              <div class="title-card">Клятва</div>
+              <div class="text-card">Кино • Павел Залесский</div>
+            </a>
+            <a class="informatio-card swiper-slide" href="#" role="group" aria-label="7 / 7" style="margin-right: 20px">
+              <div class="informatio-card__picture">
+                <div class="informatio-card__picture-icon">
+                  <div class="informatio-card__picture-icon-inner" data-tooltip="Номинация «Гагарин»">
+                    <svg class="" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                      <g clip-path="url(#a)">
+                        <circle cx="12" cy="11" r="10" fill="#fff"></circle>
+                        <circle opacity=".2" cx="12" cy="11" r="10" fill="#3478FF"></circle>
+                        <circle cx="12" cy="11" r="8.5" stroke="#3478FF" stroke-width="3"></circle>
+                        <path
+                          d="M20.485 18.485c-2.25 2.25-5.303 3.515-8.485 3.515-3.183 0-6.235-1.264-8.485-3.515"
+                          stroke="#3478FF"
+                          stroke-width="3"
+                        ></path>
+                        <path
+                          d="M20.5 12c0 3.729-3.382 7-8.5 7s-8.5-3.271-8.5-7 3.382-7 8.5-7 8.5 3.271 8.5 7z"
+                          stroke="#3478FF"
+                          stroke-width="2"
+                        ></path>
+                        <path fill="#3478FF" d="M1 8h2v6h-2zM2 2h1v7h-1zM21 8h2v6h-2z"></path>
+                      </g>
+                      <defs>
+                        <clipPath id="a">
+                          <path fill="#fff" d="M0 0h24v24h-24z"></path>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </div>
+                </div>
+                <div class="informatio-card__picture-information">3 августа • 12:00 – 14:00 Мск</div>
+                <div class="informatio-card__picture-play">
+                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M18.75 10.701C19.75 11.2783 19.75 12.7217 18.75 13.299L2.25 22.8253C1.25 23.4027 -1.07884e-06 22.681 -1.02837e-06 21.5263L-1.95552e-07 2.47372C-1.45079e-07 1.31902 1.25 0.597332 2.25 1.17468L18.75 10.701Z"
+                      fill="black"
+                    ></path>
+                  </svg>
+                </div>
+                <img class="informatio-card__picture-img" src="assets/images/card.jpg" alt="card images" />
+              </div>
+              <div class="title-card">Меланхолия</div>
+              <div class="text-card">Кино • Антон Истомин</div>
+            </a>
           </div>
-          <div class="nomination-tag">
-            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
-              <g clip-path="url(#a)">
-                <path
-                  d="M7.932 23.066c-.536 0-.946-.126-1.23-.378-.284-.252-.436-.602-.456-1.05h.876c.048.476.306.714.774.714.476 0 .714-.206.714-.618 0-.412-.23-.618-.69-.618h-.336v-.648h.312c.436 0 .654-.19.654-.57 0-.16-.052-.288-.156-.384-.1-.1-.246-.15-.438-.15-.204 0-.368.058-.492.174-.12.112-.192.27-.216.474h-.858c.024-.404.172-.73.444-.978.28-.256.66-.384 1.14-.384.46 0 .826.11 1.098.33.264.216.396.494.396.834 0 .456-.236.766-.708.93.26.06.464.176.612.348.148.172.222.392.222.66 0 .408-.148.73-.444.966-.292.232-.698.348-1.218.348zM11.72 23.066c-.504 0-.894-.128-1.17-.384-.256-.232-.396-.552-.42-.96h.894c.024.192.084.336.18.432.1.112.27.168.51.168.216 0 .382-.068.498-.204.116-.14.174-.326.174-.558 0-.232-.062-.414-.186-.546-.124-.136-.294-.204-.51-.204-.348 0-.622.114-.822.342h-.54l.06-2.442h2.718v.738h-1.992l-.018 1.074c.212-.264.53-.396.954-.396.388 0 .704.126.948.378.244.256.366.612.366 1.068 0 .456-.15.818-.45 1.086-.296.272-.694.408-1.194.408zM15.831 22.304c.588 0 .882-.454.882-1.362v-.192c0-.9-.298-1.35-.894-1.35-.604 0-.906.45-.906 1.35v.204c0 .9.306 1.35.918 1.35zm-.024.762c-.576 0-1.028-.188-1.356-.564-.34-.372-.51-.886-.51-1.542v-.204c0-.652.174-1.168.522-1.548.34-.372.79-.558 1.35-.558s1.01.18 1.35.54c.344.376.516.892.516 1.548v.198c0 .656-.166 1.176-.498 1.56-.344.38-.802.57-1.374.57z"
-                  fill="#FF7816"
-                ></path>
-                <path
-                  d="M17.793 5.096c-3.513-.73-5.794 2.962-5.794 2.962s-2.281-3.692-5.794-2.962c-3.513.73-5.292 6.566.411 10.946h10.767c5.703-4.38 3.924-10.216.411-10.946z"
-                  fill="#FDBF00"
-                ></path>
-                <path
-                  d="M19.183 14.343c-.49.58-1.087 1.151-1.799 1.698h-5.384v-7.984s.577-.933 1.597-1.769c1.009-.826 2.451-1.556 4.198-1.193 3.074.639 4.82 5.187 1.389 9.248z"
-                  fill="#FF7816"
-                ></path>
-                <path fill="#FF9F00" d="M11 0h2v17h-2zM-2.5 15.5v2h-7v-2zM6 15h12v2h-12z"></path>
-              </g>
-              <defs>
-                <clipPath id="a"><path fill="#fff" d="M0 0h24v24h-24z"></path></clipPath>
-              </defs>
+          <img class="poster-slider__shadow" src="assets/images/shadow.png" alt="" />
+          <img class="poster-slider__dark" src="assets/images/black.jpg" alt="" />
+          <button
+            class="poster-slider__arrow poster-slider__arrow-left swiper-button-disabled"
+            id="first-slider-arrow-left"
+            tabindex="-1"
+            aria-label="Previous slide"
+            aria-controls="swiper-wrapper-ad3b719eaf263f56"
+            aria-disabled="true"
+          >
+            <svg width="20" height="16" viewBox="0 0 20 16" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <path d="M4.628 7l5.364-5.364-1.414-1.414-7.778 7.778 7.778 7.778 1.414-1.414-5.364-5.364h14.572v-2h-14.572z" fill="#fff"></path>
             </svg>
-            Номинация, приуроченная к 350-летию со Дня рождения Петра I
-          </div>
-          <div class="ui">
-            <div class="ui__buttons">
-              <button class="ui__like">Нравится</button>
-              <button class="ui__share">
-                <svg width="20" height="16" viewBox="0 0 20 16" xmlns="http://www.w3.org/2000/svg" fill="none">
-                  <path
-                    d="M10 11h-2c-1.64-.001-3.25.447-4.654 1.295-1.404.848-2.55 2.063-3.314 3.515-.021-.27-.032-.54-.032-.81 0-5.523 4.477-10 10-10v-5l10 8-10 8v-5z"
-                    fill="#fff"
-                  ></path>
-                </svg>
-              </button>
-            </div>
-            <div class="ui__text">
-              Понравилось:
-              <span class="ui__span"> 256 людям</span>
-            </div>
-          </div>
-          <div class="user-box">
-            <img class="user-box__avatar" src="assets/images/avatar-60.jpg" alt="" />
-            <div class="user-box__info">
-              <div class="user-box__name">Ирина Истомина</div>
-              <div class="user-box__place">Комсомольск на Амуре, Россия</div>
-            </div>
-          </div>
+          </button>
+          <button
+            class="poster-slider__arrow poster-slider__arrow-right"
+            id="first-slider-arrow-right"
+            tabindex="0"
+            aria-label="Next slide"
+            aria-controls="swiper-wrapper-ad3b719eaf263f56"
+            aria-disabled="false"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <path d="M17.372 11l-5.364-5.364 1.414-1.414 7.778 7.778-7.778 7.778-1.414-1.414 5.364-5.364h-14.572v-2h14.572z" fill="#fff"></path>
+            </svg>
+          </button>
+          <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
         </div>
       </section>
     </main>
