@@ -431,6 +431,27 @@ main {
             &--yellow {
                 background-color: #ffd47f;
             }
+            &--white {
+                background-color: #ffffff;
+            }
+            &-text {
+                color: #000;
+                font-weight: 500;
+                font-size: 13px;
+                padding-left: 11px;
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    width: 6px;
+                    height: 6px;
+                    background: #f23d3d;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                    border-radius: 50%;
+                }
+            }
         }
         &-play {
             position: absolute;
@@ -1308,4 +1329,43 @@ main {
     font-size: 22px;
     font-weight: 600;
     line-height: 30px;
+}
+.hidden-title {
+    display: none;
+}
+.download-title {
+    margin-bottom: 57px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    overflow: hidden;
+    @media (max-width: 900px) {
+        margin-bottom: 20px;
+    }
+    @media (max-width: 500px) {
+        flex-wrap: wrap;
+    }
+    &__link {
+        font-weight: 500;
+        padding-left: 32px;
+        height: 19px;
+        position: relative;
+        line-height: 19px;
+        @media (max-width: 500px) {
+            flex: 0 1 100%;
+            margin-top: 30px;
+        }
+        &::after {
+            content: url(../images/download.svg);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 19px;
+        }
+        &:hover {
+            &::after {
+                animation: 700ms linear 0s infinite running download;
+            }
+        }
+    }
 }

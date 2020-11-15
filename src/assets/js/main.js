@@ -71,6 +71,12 @@ $(window).on("load", () => {
         ajaxRequest("literary-room-filter", "test.php")
     })
     // /Фильтр на странице literary-room.html
+    // Фильтр на странице results.html
+    $("#results-filter").on("input submit", (e) => {
+        e.preventDefault()
+        ajaxRequest("results-filter", "test.php")
+    })
+    // /Фильтр на странице results.html
     // Даты на странице poster.html
     $("#poster-filter").on("input submit", (e) => {
         e.preventDefault()
@@ -245,6 +251,14 @@ $(window).on("load", () => {
         $('.content').fadeOut(100)
         $(`[data-name=${$(this).data('tag-name')}]`).fadeIn(100)
     })
+    $('.results').on('click', (e) => {
+        const target = $(e.target);
+        (target.parents('.table__switch-button').length || target.hasClass('table__switch-button')) && (
+            target.parents('.table__switch').find('.table__switch-button').removeClass('table__switch-button--active'),
+            target.addClass('table__switch-button--active')
+
+        )
+    })
     // /event
     // ----------------------------------------------
     // unique function
@@ -350,6 +364,11 @@ $(window).on("load", () => {
                         ? $(slide).addClass("swiper-slide-prev-prev")
                         : $(slide).removeClass("swiper-slide-prev-prev")
                 })
+                slides.each((slide, index) => {
+                    index > activeIndex
+                        ? $(slide).addClass("swiper-slide-next-next")
+                        : $(slide).removeClass("swiper-slide-next-next")
+                })
             },
             reachEnd: ({ $el }) => {
                 $el.children(".poster-slider__shadow").addClass(
@@ -369,6 +388,7 @@ $(window).on("load", () => {
             },
         },
     })
+
     const swiperStories = new Swiper(".poster-slider__stories", {
         spaceBetween: 10,
         slidesPerView: "auto",
@@ -391,6 +411,11 @@ $(window).on("load", () => {
                     index < activeIndex
                         ? $(slide).addClass("swiper-slide-prev-prev")
                         : $(slide).removeClass("swiper-slide-prev-prev")
+                })
+                slides.each((slide, index) => {
+                    index > activeIndex
+                        ? $(slide).addClass("swiper-slide-next-next")
+                        : $(slide).removeClass("swiper-slide-next-next")
                 })
             },
             reachEnd: ({ $el }) => {
