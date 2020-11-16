@@ -115,7 +115,7 @@
       </div>
     </header>
     <main class="results">
-      <section class="filter">
+      <section class="filter first-section">
         <form class="filter__container container" method="POST" id="results-filter">
           <div class="download-title">
             <div class="title">Итоги</div>
@@ -295,7 +295,7 @@
               </div>
             </div>
           </div>
-          <div class="table__content" data-type-block="prizewinner">
+          <div class="table__content table__content--hidden" data-type-block="prizewinner">
             <div class="table__content-line">
               <div class="table__content-name">Фролова Алёна 2</div>
               <div class="table__content-age">14-17 лет</div>
@@ -342,62 +342,204 @@
             </div>
           </div>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          style="margin: auto; background: rgb(12, 12, 13); display: block"
-          width="51px"
-          height="51px"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="xMidYMid"
-        >
-          <g transform="rotate(0 50 50)">
-            <rect x="47" y="15.5" rx="3" ry="4.5600000000000005" width="6" height="19" fill="#ffffff">
-              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.8888888888888888s" repeatCount="indefinite"></animate>
-            </rect>
-          </g>
-          <g transform="rotate(40 50 50)">
-            <rect x="47" y="15.5" rx="3" ry="4.5600000000000005" width="6" height="19" fill="#ffffff">
-              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.7777777777777778s" repeatCount="indefinite"></animate>
-            </rect>
-          </g>
-          <g transform="rotate(80 50 50)">
-            <rect x="47" y="15.5" rx="3" ry="4.5600000000000005" width="6" height="19" fill="#ffffff">
-              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.6666666666666666s" repeatCount="indefinite"></animate>
-            </rect>
-          </g>
-          <g transform="rotate(120 50 50)">
-            <rect x="47" y="15.5" rx="3" ry="4.5600000000000005" width="6" height="19" fill="#ffffff">
-              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.5555555555555556s" repeatCount="indefinite"></animate>
-            </rect>
-          </g>
-          <g transform="rotate(160 50 50)">
-            <rect x="47" y="15.5" rx="3" ry="4.5600000000000005" width="6" height="19" fill="#ffffff">
-              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.4444444444444444s" repeatCount="indefinite"></animate>
-            </rect>
-          </g>
-          <g transform="rotate(200 50 50)">
-            <rect x="47" y="15.5" rx="3" ry="4.5600000000000005" width="6" height="19" fill="#ffffff">
-              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.3333333333333333s" repeatCount="indefinite"></animate>
-            </rect>
-          </g>
-          <g transform="rotate(240 50 50)">
-            <rect x="47" y="15.5" rx="3" ry="4.5600000000000005" width="6" height="19" fill="#ffffff">
-              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.2222222222222222s" repeatCount="indefinite"></animate>
-            </rect>
-          </g>
-          <g transform="rotate(280 50 50)">
-            <rect x="47" y="15.5" rx="3" ry="4.5600000000000005" width="6" height="19" fill="#ffffff">
-              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.1111111111111111s" repeatCount="indefinite"></animate>
-            </rect>
-          </g>
-          <g transform="rotate(320 50 50)">
-            <rect x="47" y="15.5" rx="3" ry="4.5600000000000005" width="6" height="19" fill="#ffffff">
-              <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animate>
-            </rect>
-          </g>
-        </svg>
       </section>
+      <section class="table">
+        <div class="container">
+          <div class="table__subtitle">Концертный зал</div>
+          <div class="title">Театр моды</div>
+          <div class="table__switch">
+            <button class="table__switch-button table__switch-button--active" data-type="champions">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <path
+                  d="M16.866 20.124l-4.866-1.406-4.866 1.406c-.042.084-.056.169-.056.267v2.906h9.844v-2.906c0-.098-.014-.183-.056-.267z"
+                  fill="#8E8E8E"
+                />
+                <path
+                  d="M23.297 1.406h-3.593l.03-.703c0-.394-.309-.703-.703-.703h-14.062c-.394 0-.703.309-.703.703l.03.703h-3.593c-.389 0-.703.314-.703.703v1.781c0 3.926 3.145 7.115 7.021 7.32.807 1.112 1.766 1.937 2.856 2.402-.169 3.417-2.123 5.794-2.587 6.286-.07.056-.127.141-.155.225h9.731c-.028-.084-.084-.169-.155-.225-.478-.492-2.419-2.855-2.587-6.286 1.091-.465 2.055-1.29 2.863-2.402 3.872-.209 7.014-3.396 7.014-7.32v-1.781c0-.389-.314-.703-.703-.703zm-21.891 2.484v-1.078h2.95c.182 2.324.686 4.785 1.746 6.877-2.655-.598-4.695-2.966-4.695-5.799zm21.188 0c0 2.832-2.039 5.198-4.692 5.798 1.051-2.092 1.557-4.529 1.742-6.876h2.95v1.078z"
+                  fill="#FDBF00"
+                />
+                <path
+                  d="M13.122 8.944l-1.122-.583-1.122.583c-.235.121-.522.101-.738-.055-.216-.157-.324-.422-.28-.684l.206-1.249-.899-.888c-.196-.191-.256-.474-.176-.718.082-.253.301-.438.564-.478l1.25-.188.566-1.131c.239-.477 1.019-.477 1.258 0l.566 1.131 1.25.188c.264.04.482.225.564.478.082.253.015.531-.176.718l-.899.888.206 1.249c.044.262-.065.527-.28.684-.214.155-.501.178-.737.055z"
+                  fill="#FF7816"
+                />
+              </svg>
+              Победители
+            </button>
+            <button class="table__switch-button" data-type="prizewinner">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <path
+                  d="M21.456 21.615l-2.889-.636-.895 2.827c-.064.203-.34.233-.446.048l-3.574-6.209c1.761-.381 3.327-1.286 4.53-2.542l3.54 6.151c.106.184-.057.407-.265.362z"
+                  fill="#FD646F"
+                />
+                <path
+                  d="M21.457 21.616l-2.671-.588c-.124-.027-.248.044-.286.165l-.828 2.614c-.065.203-.34.233-.446.048l-3.062-5.32-.512-.889c1.761-.382 3.327-1.286 4.53-2.542l.508.883 3.032 5.268c.106.185-.057.407-.265.362zM10.405 17.571l-3.631 6.306c-.106.185-.382.155-.446-.048l-.828-2.614c-.038-.121-.162-.193-.286-.165l-2.671.588c-.208.046-.371-.177-.265-.362l3.44-6.041c1.261 1.195 2.898 2.042 4.687 2.336z"
+                  fill="#f35"
+                />
+                <path
+                  d="M20.896 8.923c0 2.398-.944 4.576-2.479 6.18-1.203 1.257-2.769 2.161-4.53 2.542-.608.132-1.239.201-1.887.201-.494 0-.978-.04-1.45-.118-1.697-.279-3.233-1.04-4.462-2.139l-.197-.18c-.229-.217-.447-.447-.653-.687-.197-.231-.382-.472-.555-.723-.52-.752-.927-1.588-1.198-2.484-.248-.82-.381-1.69-.381-2.592 0-4.928 3.983-8.923 8.896-8.923.899 0 1.766.134 2.583.383.894.271 1.727.679 2.477 1.201.25.174.491.359.721.558.308.264.597.548.866.851 1.399 1.577 2.249 3.654 2.249 5.931z"
+                  fill="#FF9F00"
+                />
+                <path
+                  d="M12 15.315c3.519 0 6.372-2.862 6.372-6.391 0-3.53-2.853-6.391-6.372-6.391-3.519 0-6.372 2.861-6.372 6.391s2.853 6.391 6.372 6.391z"
+                  fill="#FDBF00"
+                />
+                <path
+                  d="M12.22 5.389l.875 1.788c.036.073.105.123.185.135l1.967.283c.201.029.282.276.136.418l-1.427 1.389c-.058.056-.084.138-.071.217l.34 1.964c.035.201-.176.354-.356.258l-1.756-.93c-.072-.038-.158-.038-.229 0l-1.756.93c-.18.095-.391-.058-.356-.258l.34-1.964c.014-.08-.013-.161-.071-.217l-1.427-1.389c-.146-.142-.065-.389.136-.418l1.967-.283c.08-.012.15-.062.185-.135l.875-1.788c.09-.183.351-.183.44 0z"
+                  fill="#FF7816"
+                />
+              </svg>
+              Призеры
+            </button>
+          </div>
+          <div class="table__content" data-type-block="champions">
+            <div class="table__content-line">
+              <div class="table__content-name">Фролова Алёна</div>
+              <div class="table__content-age">14-17 лет</div>
+              <div class="table__content-place">Челябинская область</div>
+              <div class="table__content-text">Муниципальное автономное общеобразовательное учреждение «Академический лицей № 95 г. Челябинска»</div>
+            </div>
+            <div class="table__content-line">
+              <div class="table__content-name">Полякова Софья</div>
+              <div class="table__content-age">10-13 лет</div>
+              <div class="table__content-place">Ханты-Мансийский автономный округ — Югра</div>
+              <div class="table__content-text">Муниципальное бюджетное образовательное учреждение «Лицей №1», г. Нефтеюганск</div>
+            </div>
+            <div class="table__content-line">
+              <div class="table__content-name">Истомина Марина</div>
+              <div class="table__content-age">14-17 лет</div>
+              <div class="table__content-place">Липецкая область</div>
+              <div class="table__content-text">
+                Государственное бюджетное учреждение дополнительного образования «Центр дополнительного образования Липецкой области», г. Липецк
+              </div>
+            </div>
+            <div class="table__content-line">
+              <div class="table__content-name">Одинцова Ксения</div>
+              <div class="table__content-age">10-13 лет</div>
+              <div class="table__content-place">Тульская область</div>
+              <div class="table__content-text">
+                Муниципальное казенное учреждение дополнительного образования «Одоевский Дом детского творчества», п. Одоев
+              </div>
+            </div>
+            <div class="table__content-line">
+              <div class="table__content-name">Истомина Марина</div>
+              <div class="table__content-age">14-17 лет</div>
+              <div class="table__content-place">Липецкая область</div>
+              <div class="table__content-text">
+                Государственное бюджетное учреждение дополнительного образования «Центр дополнительного образования Липецкой области», г. Липецк
+              </div>
+            </div>
+            <div class="table__content-line">
+              <div class="table__content-name">Одинцова Ксения</div>
+              <div class="table__content-age">10-13 лет</div>
+              <div class="table__content-place">Тульская область</div>
+              <div class="table__content-text">
+                Муниципальное казенное учреждение дополнительного образования «Одоевский Дом детского творчества», п. Одоев
+              </div>
+            </div>
+          </div>
+          <div class="table__content table__content--hidden" data-type-block="prizewinner">
+            <div class="table__content-line">
+              <div class="table__content-name">Фролова Алёна 2</div>
+              <div class="table__content-age">14-17 лет</div>
+              <div class="table__content-place">Челябинская область</div>
+              <div class="table__content-text">Муниципальное автономное общеобразовательное учреждение «Академический лицей № 95 г. Челябинска»</div>
+            </div>
+            <div class="table__content-line">
+              <div class="table__content-name">Полякова Софья 2</div>
+              <div class="table__content-age">10-13 лет</div>
+              <div class="table__content-place">Ханты-Мансийский автономный округ — Югра</div>
+              <div class="table__content-text">Муниципальное бюджетное образовательное учреждение «Лицей №1», г. Нефтеюганск</div>
+            </div>
+            <div class="table__content-line">
+              <div class="table__content-name">Истомина Марина 2</div>
+              <div class="table__content-age">14-17 лет</div>
+              <div class="table__content-place">Липецкая область</div>
+              <div class="table__content-text">
+                Государственное бюджетное учреждение дополнительного образования «Центр дополнительного образования Липецкой области», г. Липецк
+              </div>
+            </div>
+            <div class="table__content-line">
+              <div class="table__content-name">Одинцова Ксения 2</div>
+              <div class="table__content-age">10-13 лет</div>
+              <div class="table__content-place">Тульская область</div>
+              <div class="table__content-text">
+                Муниципальное казенное учреждение дополнительного образования «Одоевский Дом детского творчества», п. Одоев
+              </div>
+            </div>
+            <div class="table__content-line">
+              <div class="table__content-name">Истомина Марина 2</div>
+              <div class="table__content-age">14-17 лет</div>
+              <div class="table__content-place">Липецкая область</div>
+              <div class="table__content-text">
+                Государственное бюджетное учреждение дополнительного образования «Центр дополнительного образования Липецкой области», г. Липецк
+              </div>
+            </div>
+            <div class="table__content-line">
+              <div class="table__content-name">Одинцова Ксения 2</div>
+              <div class="table__content-age">10-13 лет</div>
+              <div class="table__content-place">Тульская область</div>
+              <div class="table__content-text">
+                Муниципальное казенное учреждение дополнительного образования «Одоевский Дом детского творчества», п. Одоев
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        style="margin: auto; background: rgb(12, 12, 13); display: block"
+        width="51px"
+        height="51px"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="xMidYMid"
+      >
+        <g transform="rotate(0 50 50)">
+          <rect x="47" y="15.5" rx="3" ry="4.5600000000000005" width="6" height="19" fill="#ffffff">
+            <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.8888888888888888s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+        <g transform="rotate(40 50 50)">
+          <rect x="47" y="15.5" rx="3" ry="4.5600000000000005" width="6" height="19" fill="#ffffff">
+            <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.7777777777777778s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+        <g transform="rotate(80 50 50)">
+          <rect x="47" y="15.5" rx="3" ry="4.5600000000000005" width="6" height="19" fill="#ffffff">
+            <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.6666666666666666s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+        <g transform="rotate(120 50 50)">
+          <rect x="47" y="15.5" rx="3" ry="4.5600000000000005" width="6" height="19" fill="#ffffff">
+            <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.5555555555555556s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+        <g transform="rotate(160 50 50)">
+          <rect x="47" y="15.5" rx="3" ry="4.5600000000000005" width="6" height="19" fill="#ffffff">
+            <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.4444444444444444s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+        <g transform="rotate(200 50 50)">
+          <rect x="47" y="15.5" rx="3" ry="4.5600000000000005" width="6" height="19" fill="#ffffff">
+            <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.3333333333333333s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+        <g transform="rotate(240 50 50)">
+          <rect x="47" y="15.5" rx="3" ry="4.5600000000000005" width="6" height="19" fill="#ffffff">
+            <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.2222222222222222s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+        <g transform="rotate(280 50 50)">
+          <rect x="47" y="15.5" rx="3" ry="4.5600000000000005" width="6" height="19" fill="#ffffff">
+            <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.1111111111111111s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+        <g transform="rotate(320 50 50)">
+          <rect x="47" y="15.5" rx="3" ry="4.5600000000000005" width="6" height="19" fill="#ffffff">
+            <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+      </svg>
     </main>
     <footer class="footer">
       <div class="container">

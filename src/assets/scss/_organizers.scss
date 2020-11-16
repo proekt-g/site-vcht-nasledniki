@@ -1,0 +1,92 @@
+.organizers {
+    .content {
+        &__inner {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 40px -10px -10px;
+            @media (max-width: 1400px) {
+                margin: 20px -10px -10px;
+            }
+            @media (max-width: 900px) {
+                margin: 40px -10px -10px;
+            }
+            @media (max-width: 700px) {
+                margin: 40px 0 -10px;
+            }
+            @media (max-width: 500px) {
+                margin: 20px 0 -10px;
+            }
+        }
+        &__box {
+            flex: 0 0 630px;
+            margin: 10px;
+            height: 420px;
+            text-align: center;
+            // display: flex;
+            // flex-direction: column;
+            background: rgba(37, 37, 38, 0.6);
+            backdrop-filter: blur(150px);
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            @media (max-width: 1400px) {
+                flex: 0 0 570px;
+                height: 380px;
+            }
+            @media (max-width: 1279px) {
+                flex: 0 0 334px;
+                height: 223px;
+            }
+            @media (max-width: 700px) {
+                flex: 0 0 100%;
+                margin: 10px 0;
+            }
+            &-text {
+                display: block;
+                flex: 0 1 100%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+            }
+            &-link {
+                position: relative;
+                margin: 0 25px 20px 0;
+                font-size: 14px;
+                line-height: 20px;
+                font-feature-settings: "pnum" on, "lnum" on;
+                color: #8d8d8d;
+                padding-right: 20px;
+                transition: 0.3s;
+                @media (max-width: 700px) {
+                    margin: 0 20px 15px 0;
+                }
+                &:hover {
+                    color: #fff;
+                    &::after {
+                        top: -2px;
+                    }
+                }
+                &::after {
+                    content: url(../images/arrow-right-up.svg);
+                    position: absolute;
+                    right: 0;
+                    top: 2px;
+                    transition: 0.3s;
+                }
+            }
+        }
+        &__img {
+            // height: 100%;
+            margin-top: auto;
+            width: auto;
+            max-width: 600px;
+            max-height: 350px;
+            @media (max-width: 1279px) {
+                max-width: 155px;
+                max-height: 120px;
+            }
+            // flex: 0 0 auto;
+        }
+    }
+}

@@ -1229,6 +1229,31 @@ main {
         }
     }
 }
+.filter-tag {
+    margin-top: 50px;
+    display: flex;
+    overflow: auto;
+    @media (max-width: 1400px) {
+        margin-top: 40px;
+    }
+    @media (max-width: 900px) {
+        margin-top: 50px;
+    }
+    @media (max-width: 500px) {
+        margin-top: 20px;
+    }
+    &__title {
+        margin-right: 20px;
+        color: #858586;
+        flex: 0 0 auto;
+        &:last-child {
+            padding-right: 20px;
+        }
+        &--active {
+            color: #fff;
+        }
+    }
+}
 .button-more {
     margin-top: 30px;
     width: 100%;
@@ -1367,5 +1392,17 @@ main {
                 animation: 700ms linear 0s infinite running download;
             }
         }
+    }
+}
+.first-section {
+    margin-top: 60px;
+    @media (max-width: 1400px) {
+        margin-top: 40px;
+    }
+    @media (max-width: 900px) {
+        margin-top: 20px;
+    }
+    @media (max-width: 500px) {
+        margin-top: 40px;
     }
 }

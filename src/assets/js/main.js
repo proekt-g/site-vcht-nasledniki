@@ -59,6 +59,12 @@ $(window).on("load", () => {
         ajaxRequest("filter__container", "test.php")
     })
     // /Фильтр на странице participants.html
+    // Фильтр на странице experts.html
+    $("#experts-filter").on("input submit", (e) => {
+        e.preventDefault()
+        ajaxRequest("experts", "test.php")
+    })
+    // /Фильтр на странице experts.html
     // Фильтр на странице cinema-hall.html
     $("#cinema-hall-filter").on("input submit", (e) => {
         e.preventDefault()
@@ -137,6 +143,18 @@ $(window).on("load", () => {
         ajaxRequest("literary-crumbs-two", "test.php")
     })
     // /Фильтр на странице literary-room.html в блоке "Исполнители-чтецы"
+    // Фильтр на странице experts.html в блоке "Жюри"
+    $("#experts-crumbs-one").on("input submit", (e) => {
+        e.preventDefault()
+        ajaxRequest("experts-crumbs-one", "test.php")
+    })
+    // /Фильтр на странице experts.html в блоке "Жюри"
+    // Фильтр на странице experts.html в блоке "Ведущие мастер-классов"
+    $("#experts-crumbs-two").on("input submit", (e) => {
+        e.preventDefault()
+        ajaxRequest("experts-crumbs-two", "test.php")
+    })
+    // /Фильтр на странице experts.html в блоке "Ведущие мастер-классов"
 
     $(".crumbs__crumb").on("click", function (e) {
         $(e.target).parents('.filter-top').length && ($(this).toggleClass('crumbs__crumb--active'), filterContentBlock())
@@ -253,11 +271,35 @@ $(window).on("load", () => {
     })
     $('.results').on('click', (e) => {
         const target = $(e.target);
-        (target.parents('.table__switch-button').length || target.hasClass('table__switch-button')) && (
-            target.parents('.table__switch').find('.table__switch-button').removeClass('table__switch-button--active'),
-            target.addClass('table__switch-button--active')
-
+        const button = (target.parents('.table__switch-button').length && target.parents('.table__switch-button')) || (target.hasClass('table__switch-button') && target);
+        (button) && (
+            button.parents('.table__switch').find('.table__switch-button').removeClass('table__switch-button--active'),
+            button.addClass('table__switch-button--active'),
+            button.parents('.table').find('.table__content').fadeOut(100),
+            button.parents('.table').find(`.table__content[data-type-block="${button.data('type')}"]`).fadeIn(100)
         )
+    })
+    $('.filter-tag__title').on('click', (e) => {
+        $(e.target).toggleClass('filter-tag__title--active')
+    })
+    $('body').on('click', (e) => {
+        const target = $(e.target);
+        const button = (target.parents('.content__news-footer').length && target.parents('.content__news-footer')) || (target.hasClass('content__news-footer') && target);
+        if (button) {
+            const el = button.parents('.content__news').find('.content__news-text')
+            if (!button.hasClass('content__news-footer--active')) {
+                const curHeight = el.height(),
+                    autoHeight = el.css('height', 'auto').height();
+                el.height(curHeight).animate({ height: autoHeight }, 200);
+                button.text(button.data('switch-text-start'))
+            } else {
+                console.log(button.data('switch-text-end'))
+                el.css('height', el.data('text-height'))
+                button.text(button.data('switch-text-end'))
+            }
+            button.toggleClass('content__news-footer--active')
+        }
+
     })
     // /event
     // ----------------------------------------------

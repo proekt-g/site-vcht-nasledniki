@@ -1,16 +1,4 @@
 .results {
-    .filter {
-        margin-top: 60px;
-        @media (max-width: 1400px) {
-            margin-top: 40px;
-        }
-        @media (max-width: 900px) {
-            margin-top: 20px;
-        }
-        @media (max-width: 500px) {
-            margin-top: 40px;
-        }
-    }
     .table {
         margin-top: 80px;
         @media (max-width: 1400px) {
@@ -61,7 +49,7 @@
         }
         &__content {
             margin-top: 10px;
-            &--prizewinner {
+            &--hidden {
                 display: none;
             }
             &-line {
