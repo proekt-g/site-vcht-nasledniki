@@ -10,7 +10,7 @@
   <body>
     <header class="header">
       <div class="header__inner container">
-        <a class="header__logo" href="#">
+        <button class="header__logo">
           <svg class="header__logo-svg" width="116" height="50" viewBox="0 0 116 50" xmlns="http://www.w3.org/2000/svg" fill="none">
             <path
               fill-rule="evenodd"
@@ -62,11 +62,32 @@
               fill="#fff"
             />
           </svg>
-          <!-- <svg class="header__logo-arrow" width="14" height="8" viewBox="0 0 14 8" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <svg class="header__logo-arrow" width="14" height="8" viewBox="0 0 14 8" xmlns="http://www.w3.org/2000/svg" fill="none">
             <path d="M7.057 5.172l4.95-4.95 1.414 1.414-6.364 6.364-6.364-6.364 1.414-1.414 4.95 4.95z" fill="#858686" />
-          </svg> -->
-        </a>
-        <!-- .header__list-logo>. -->
+          </svg>
+        </button>
+        <div class="header__list-logo">
+          <a class="header__list-logo-box header__list-logo-box--active" href="#">
+            <img class="header__list-logo-picture" src="assets/images/logo-1.svg" alt="" />
+            <div class="header__list-logo-text">Большой фестиваль детского и юношеского творчества</div>
+          </a>
+          <a class="header__list-logo-box" href="#">
+            <img class="header__list-logo-picture" src="assets/images/logo-2.svg" alt="" />
+            <div class="header__list-logo-text">Всероссийский фестиваль «Как взмах крыла»</div>
+          </a>
+          <a class="header__list-logo-box" href="#">
+            <img class="header__list-logo-picture" src="assets/images/logo-1.svg" alt="" />
+            <div class="header__list-logo-text">Всероссийский фестиваль «Танцы на колясках»</div>
+          </a>
+          <a class="header__list-logo-box" href="#">
+            <img class="header__list-logo-picture" src="assets/images/logo-3.svg" alt="" />
+            <div class="header__list-logo-text">Всероссийский фестиваль инклюзивных театров</div>
+          </a>
+          <a class="header__list-logo-box" href="#">
+            <img class="header__list-logo-picture" src="assets/images/logo-4.svg" alt="" />
+            <div class="header__list-logo-text">Всероссийский детский фестиваль «Наследники традиций»</div>
+          </a>
+        </div>
         <nav class="menu">
           <aside class="menu__burger">
             <span class="menu__burger-line menu__burger-line--first"></span>

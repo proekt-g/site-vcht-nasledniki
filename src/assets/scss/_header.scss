@@ -19,8 +19,72 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
+    }
+    &__list-logo {
+        position: absolute;
+        left: 60px;
+        display: flex;
+        top: calc(100% + 15px);
+        max-width: 1140px;
+        flex-wrap: wrap;
+        background: rgba(37, 37, 38, 0.6);
+        backdrop-filter: blur(150px);
+        border-radius: 15px;
+        box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.25);
+        padding: 20px 30px 30px;
+        justify-content: space-between;
+        pointer-events: none;
+        opacity: 0;
+        transition: 0.3s;
+        max-height: calc(100vh - 90px);
+        overflow: auto;
+        @media (max-width: 1279px) {
+            left: 40px;
+        }
+        @media (max-width: 900px) {
+            max-width: calc(100% - 60px);
+        }
+        @media (max-width: 500px) {
+            left: 20px;
+            padding: 10px 20px 20px;
+            max-width: calc(100% - 40px);
+        }
+        justify-content: center;
+        &--open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        &-box {
+            flex: 0 0 200px;
+            margin-top: 10px;
+            &--active {
+                .header__list-logo-text {
+                    color: #fff;
+                }
+            }
+            &:hover {
+                .header__list-logo-text {
+                    color: #fff;
+                }
+            }
+        }
+        &-picture {
+            max-width: 160px;
+            object-fit: fill;
+            height: 100px;
+            width: auto;
+        }
+        &-text {
+            margin-top: 10px;
+            font-size: 16px;
+            line-height: 20px;
+            color: #8d8d8d;
+            transition: 0.3s;
+        }
     }
     &__logo {
+        display: flex;
         @media (max-width: 900px) {
             height: 48px;
             display: flex;
@@ -30,7 +94,12 @@
             height: 34px;
             text-align-last: left;
         }
-        svg {
+        &--open {
+            .header__logo-arrow {
+                transform: rotate(180deg);
+            }
+        }
+        &-svg {
             @media (max-width: 900px) {
                 height: 48px;
             }
@@ -38,6 +107,11 @@
                 height: 34px;
                 width: auto;
             }
+        }
+        &-arrow {
+            align-self: center;
+            margin-left: 15px;
+            transition: 0.3s;
         }
     }
     &__log {

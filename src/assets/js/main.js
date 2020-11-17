@@ -299,7 +299,12 @@ $(window).on("load", () => {
             }
             button.toggleClass('content__news-footer--active')
         }
-
+        const share = (target.parents('.ui__share').length && target.parents('.ui__share')) || (target.hasClass('ui__share') && target);
+        share ? share.find('.ui__share-list').toggleClass('ui__share-list--open') : $('.ui__share-list').removeClass('ui__share-list--open')
+    })
+    $('.header__logo').on('click', () => {
+        $('.header__logo').toggleClass('header__logo--open')
+        $('.header__list-logo').toggleClass('header__list-logo--open')
     })
     // /event
     // ----------------------------------------------
